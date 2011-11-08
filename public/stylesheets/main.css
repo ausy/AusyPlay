@@ -7,10 +7,11 @@ html, body {
 }
 
 #bdmanager #header {
-	height: 2em;
-	border-color: black;
-	border-width: 1px;
-	border-style: solid;
+
+}
+
+#bdmanager #header img {
+    width: 200px;
 }
 
 #bdmanager #menu-top {
@@ -22,13 +23,11 @@ html, body {
 }
 
 #bdmanager #body {
-	border-color: black;
-	border-width: 1px;
-	border-style: solid;
     margin-top: 5px;
 }
 
 #bdmanager #body #nav {
+	display: none;
 	height: 1em;
 	border-color: black;
 	border-width: 1px;
@@ -44,11 +43,9 @@ html, body {
 }
 
 #bdmanager #body #bottom {
-	height: 5px;
-	border-color: black;
-	border-width: 1px;
-	border-style: solid;
     margin-top: 1em;
+    font-size: 0.5em;
+    text-align: center;
 }
 
 

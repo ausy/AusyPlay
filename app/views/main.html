@@ -5,23 +5,84 @@
         <title>#{get 'title' /}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}">
+        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/menu.css'}">
         <link rel="shortcut icon" type="image/x-icon" href="@{'/public/images/my-favicon.png'}">
         <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public/javascripts/jquery.menu.min.js'}" type="text/javascript" charset="utf-8"></script>
     </head>
     <body id="bdmanager">
-	    <div id="header"></div>
-	    <div id="menu-top">
-	       <a href="@{Collection.display(flash?.loggedUserId)}">Home</a> - 
-	       <a href="@{Collection.manage}">Ma Collection</a> - 
-	       <a href="@{Collection.history(flash?.loggedUserId)}">Emprunt</a>
-	       <a href="@{Secure.logout}">Déconnexion</a>
+    
+	    <div id="header">
+	       <img alt="logo" src="@{'/public/images/ausy.jpg'}">
 	    </div>
+	    
+	    <div id="menu-top">
+		    <ul id="menuone" class="menu">
+		        <li class="menumain menu_1">Ma collection</li>
+		        <li class="menumain menu_2">Emprunts
+		            <ul><li class="menu_2_1">Entrants</li>
+		                <li class="menu_2_2">Sortants</li>
+		                <li></li> 
+		                <li class="menu_2_3">Tous</li>
+		            </ul>
+		        </li>
+		        <li class="menumain menu_3">Ajouter Bd
+                </li>
+		        <li class="menumain menu_4">Deconnexion
+                </li>
+		    </ul>
+	    </div>
+	    
 	    <div id="body">
 	        <div id="nav"></div>
 	        <div id="main">
 		        #{doLayout /}
 	        </div>
-	        <div id="bottom"></div>
+	        <div id="bottom">Some copyright here ... or not </div>
 	    </div>
+	    
+	    <script language="javascript" type="text/javascript">
+		    var MENU_URLS = { 
+	    		menu_1: '@{Collection.display(flash?.loggedUserId)}',
+	    		menu_2: '@{Collection.manage}',
+	    		menu_2_1: '@{Collection.history(flash?.loggedUserId)}',
+	    		menu_2_2: '@{Collection.display(flash?.loggedUserId)}',
+	    		menu_3: '@{Collection.display(flash?.loggedUserId)}',
+	    		menu_4: '@{Secure.logout}'
+		    };
+		    
+		    $('.menu_1').click(function() {
+		    	window.location = '@{Collection.display(flash?.loggedUserId)}';
+		    });
+		    $('.menu_2').click(function() {
+		    	//window.location = '@{Collection.manage}';
+		    });
+		    $('.menu_2_1').click(function() {
+		    	window.location = '@{Collection.history(flash?.loggedUserId)}';
+		    });
+		    $('.menu_2_2').click(function() {
+		    	window.location = '@{Collection.display(flash?.loggedUserId)}';
+		    });
+		    $('.menu_4').click(function() {
+		    	window.location = '@{Collection.display(flash?.loggedUserId)}';
+		    });
+		    $('.menu_4').click(function() {
+		    	window.location = '@{Secure.logout}';
+		    });
+		    
+		    var options = {
+		    		minWidth: 120, 
+		    		arrowSrc: "@{'/public/images/arrow_right.gif'}", 
+		    		copyClassAttr: true,
+		    		hoverOpenDelay: 300, 
+		    		onClick: function(e, menuItem){
+		    			$.Menu.closeAll();
+				    	console.log(menuItem);
+				    }
+    		};
+		    
+		    $('#menuone').menu(options);
+	    </script>
+	    
     </body>
 </html>
