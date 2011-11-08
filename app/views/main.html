@@ -36,7 +36,12 @@
 	    <div id="body">
 	        <div id="nav"></div>
 	        <div id="main">
-		        #{doLayout /}
+	           <div id="collection_panel">
+    		        #{doLayout /}
+	           </div>
+	           <div id="body_panel">
+	               Contenu a mettre
+	           </div>
 	        </div>
 	        <div id="bottom">Some copyright here ... or not </div>
 	    </div>
@@ -82,6 +87,10 @@
     		};
 		    
 		    $('#menuone').menu(options);
+		    
+		    $(document).ready(function() {
+		    	// Load collection tree (containing series)
+		    });
 	    </script>
 	    
     </body>

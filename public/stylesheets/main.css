@@ -36,16 +36,31 @@ html, body {
 }
 
 #bdmanager #body #main {
-	border-color: black;
-	border-width: 1px;
-	border-style: solid;
     margin-top: 1em;
+    float: left;
+    width: 100%;
+}
+
+#bdmanager #body #collection_panel {
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    width: 20%;
+    float: left;
+}
+
+#bdmanager #body #body_panel {
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    width: 79%;
+    float: left;
 }
 
 #bdmanager #body #bottom {
     margin-top: 1em;
     font-size: 0.5em;
     text-align: center;
+    clear: both;
+    float: left;
 }
-
-
