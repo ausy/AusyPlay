@@ -1,0 +1,54 @@
+/** Main layout **/
+
+html, body {
+    font-family: Helvetica, Arial, Sans;
+    font: 1em;
+    margin: 0.5em;
+}
+
+#bdmanager #header {
+	height: 2em;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+}
+
+#bdmanager #menu-top {
+	height: 2em;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+    margin-top: 1em;
+}
+
+#bdmanager #body {
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+    margin-top: 5px;
+}
+
+#bdmanager #body #nav {
+	height: 1em;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+    margin-top: 1em;
+}
+
+#bdmanager #body #main {
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+    margin-top: 1em;
+}
+
+#bdmanager #body #bottom {
+	height: 5px;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+    margin-top: 1em;
+}
+
+

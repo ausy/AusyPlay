@@ -1,0 +1,23 @@
+package com.kebuu;
+
+public enum ConditionType {
+	
+	EQ(" = "),
+	GT(" > "),
+	LT(" < "),
+	GET(" <= "),
+	LET(" <= "),
+	IN(" in "),
+	NOT_IN(" not in ");
+	
+	protected String symbol;
+	
+	private ConditionType(String op) {
+		this.symbol = op;
+	}
+
+	public String getSymbol() {
+		return symbol;
+	}
+}
+

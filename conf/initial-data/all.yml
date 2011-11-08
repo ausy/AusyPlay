@@ -1,0 +1,335 @@
+Serie(dany):
+    name:          Dany
+Serie(cuervos):
+    name:          Cuervos
+Serie(sinCity):
+    name:          Sin City
+Serie(leFeul):
+    name:          Le Feul
+Serie(lanfeust):
+    name:          Lanfeust
+Serie(naja):
+    name:          Naja
+Serie(pecheMortel):
+    name:          Péché Mortel
+Serie(ceciEstMonCorps):
+    name:          Ceci est mon corps
+Serie(murena):
+    name:          Murena
+Serie(matteo):
+    name:          Mattéo
+Serie(yiuPM):
+    name:          Yiu premières missions
+Serie(tueur):
+    name:          Le tueur
+    
+Book(tueur1):
+    title:        Long feu
+    number:       1
+    serie:        tueur
+Book(tueur2):
+    title:        L'engrenage
+    number:       2
+    serie:        tueur
+Book(tueur3):
+    title:        La dette
+    number:       3
+    serie:        tueur
+Book(tueur4):
+    title:        Les liens du sang
+    number:       4
+    serie:        tueur
+Book(dany1):
+    title:        Ca vous intéresse
+    number:       1
+    serie:        dany
+Book(cuervos1):
+    title:        Cuervos 1
+    number:       1
+    serie:        cuervos
+Book(cuervos2):
+    title:        Cuervos 2
+    number:       2
+    serie:        cuervos
+Book(leFeul1):
+    title:        Valnes
+    number:       1
+    serie:        leFeul
+Book(leFeul2):
+    title:        Les brohms
+    number:       2
+    serie:        leFeul
+Book(leFeul3):
+    title:        L'Héritage
+    number:       3
+    serie:        leFeul
+Book(sinCity1):
+    title:        Sin City
+    number:       1
+    serie:        sinCity
+Book(sinCity2):
+    title:        J'ai tué pour elle
+    number:       2
+    serie:        sinCity
+Book(sinCity4):
+    title:        Cet enfant de salaud
+    number:       4
+    serie:        sinCity
+Book(matteo1):
+    title:        Première époque (1914-1915)
+    number:       1
+    serie:        matteo
+Book(matteo2):
+    title:        Deuxième époque (1917-1918)
+    number:       2
+    serie:        matteo
+    
+Book(_500fusils):
+    title:        500 fusils
+    number:       1
+    
+Book(lanfeust1):
+    title:        L'ivoire du magohamoth
+    number:       1
+    serie:        lanfeust
+    
+Book(lanfeust4):
+    title:        Le paladin d'Eckmül
+    number:       4
+    serie:        lanfeust
+    
+Book(etoileDuDesert):    
+    title:        Etoile du désert - Intégrale
+    number:       1
+    
+Book(yiuPM1):    
+    title:        L'armée des néo-déchêts
+    number:       1
+    serie:        yiuPM
+    
+Book(yiuPM2):    
+    title:        Les résurrections de l’Impure
+    number:       2
+    serie:        yiuPM
+    
+Book(yiuPM5):    
+    title:        Exfiltration geisha
+    number:       5
+    serie:        yiuPM
+    
+Book(yiuPM6):    
+    title:        L'inquisiteur et la proie
+    number:       6
+    serie:        yiuPM
+    
+Book(murena1):    
+    title:        La meilleur des mères
+    number:       1
+    serie:        murena
+    
+Book(murena2):    
+    title:        Le sans des bêtes
+    number:       2
+    serie:        murena
+
+Book(angela):    
+    title:        Angela
+    number:       1
+
+Book(adiosPalomita):    
+    title:        Adios Palomita
+    number:       1
+
+Book(naja1):    
+    title:        Tome 1
+    number:       1
+    serie:        naja
+
+Book(naja2):    
+    title:        Tome 2
+    number:       2
+    serie:        naja
+
+Book(naja3):    
+    title:        Tome 3
+    number:       3
+    serie:        naja
+
+Book(naja4):    
+    title:        Tome 4
+    number:       4
+    serie:        naja
+
+Book(naja5):    
+    title:        Tome 5
+    number:       5
+    serie:        naja
+
+Book(ceciEstMonCorps1):    
+    title:        Lumière crue
+    number:       1
+    serie:        ceciEstMonCorps
+
+Book(ceciEstMonCorps2):    
+    title:        Surexposition
+    number:       2
+    serie:        ceciEstMonCorps
+  
+User(ctardella):
+    email:         christophe.tardella@gmail.com
+    pseudo:        kebuu
+    password:      secret
+    
+User(opichoud):
+    email:         oriane.pichoud@gmail.com
+    pseudo:        opichoud
+    password:      secret
+    
+User(cpetitjean):
+    email:         christophe.petitjean@gmail.com
+    pseudo:        cpetitjean
+    password:      secret
+    
+User(cteule):
+    email:         clement.teule@gmail.com
+    pseudo:        cteule
+    password:      secret
+    
+User(ecanale):
+    email:         elisa.canale@gmail.com
+    pseudo:        ecanale
+    password:      secret
+    
+User(ysanchez):
+    email:         yan.sanchez@gmail.com
+    pseudo:        ysanchez
+    password:      secret
+    
+User(dbernard):
+    email:         dominique.bernard@gmail.com
+    pseudo:        dbernard
+    password:      secret
+
+OwnedBook(tueur1CTardella):
+    baseBook:       tueur1
+    owner:          ctardella
+    borrower:       ecanale
+OwnedBook(tueur2CTardella):
+    baseBook:       tueur2
+    owner:          ctardella
+    borrower:       ecanale
+OwnedBook(tueur3CTardella):
+    baseBook:       tueur3
+    owner:          ctardella
+    borrower:       ecanale
+OwnedBook(tueur4CTardella):
+    baseBook:       tueur4
+    owner:          ctardella
+    borrower:       ecanale
+OwnedBook(yiuPM1CTardella):
+    baseBook:       yiuPM1
+    owner:          ctardella
+    borrower:       ecanale
+OwnedBook(yiuPM2CTardella):
+    baseBook:       yiuPM2
+    owner:          ctardella
+    borrower:       ecanale
+OwnedBook(yiuPM5CTardella):
+    baseBook:       yiuPM5
+    owner:          ctardella
+    borrower:       ecanale
+OwnedBook(yiuPM6CTardella):
+    baseBook:       yiuPM1
+    owner:          ctardella
+    borrower:       cpetitjean
+OwnedBook(dany1CTardella):
+    baseBook:       dany1
+    owner:          ctardella
+    borrower:       ecanale
+OwnedBook(cuervos1CTardella):
+    baseBook:       cuervos1
+    owner:          ctardella
+    borrower:       ecanale
+OwnedBook(cuervos2CTardella):
+    baseBook:       cuervos2
+    owner:          ctardella
+    borrower:       ecanale
+OwnedBook(leFeul1CTardella):
+    baseBook:       leFeul1
+    owner:          ctardella
+OwnedBook(leFeul2CTardella):
+    baseBook:       leFeul2
+    owner:          ctardella
+OwnedBook(leFeul3CTardella):
+    baseBook:       leFeul3
+    owner:          ctardella
+OwnedBook(sinCity1CTardella):
+    baseBook:       sinCity1
+    owner:          ctardella
+    borrower:       cpetitjean
+OwnedBook(sinCity2CTardella):
+    baseBook:       sinCity2
+    owner:          ctardella
+    borrower:       cpetitjean
+OwnedBook(sinCity4CTardella):
+    baseBook:       sinCity4
+    owner:          ctardella
+    borrower:       ecanale
+OwnedBook(etoileDuDesertCTardella):
+    baseBook:       etoileDuDesert
+    owner:          ctardella
+OwnedBook(adiosPalomitaCTardella):
+    baseBook:       adiosPalomita
+    owner:          ctardella
+OwnedBook(angelaCTardella):
+    baseBook:       angela
+    owner:          ctardella
+OwnedBook(matteo1CTardella):
+    baseBook:       matteo1
+    owner:          ctardella
+    borrower:       ysanchez
+OwnedBook(matteo2CTardella):
+    baseBook:       matteo2
+    owner:          ctardella
+    borrower:       ysanchez
+OwnedBook(angelaCTardella):
+    baseBook:       angela
+    owner:          ctardella
+    borrower:       cpetitjean
+OwnedBook(_500fusilsCTardella):
+    baseBook:       _500fusils
+    owner:          ctardella
+OwnedBook(murena1CTardella):
+    baseBook:       murena1
+    owner:          ctardella
+OwnedBook(murena2CTardella):
+    baseBook:       murena2
+    owner:          ctardella
+OwnedBook(naja1CTardella):
+    baseBook:       naja1
+    owner:          ctardella
+    borrower:       cteule
+OwnedBook(naja2CTardella):
+    baseBook:       naja2
+    owner:          ctardella
+    borrower:       cteule
+OwnedBook(naja3CTardella):
+    baseBook:       naja3
+    owner:          ctardella
+    borrower:       cteule
+OwnedBook(naja4CTardella):
+    baseBook:       naja4
+    owner:          ctardella
+    borrower:       cteule
+OwnedBook(naja5CTardella):
+    baseBook:       naja5
+    owner:          ctardella
+    borrower:       cteule
+OwnedBook(cemc1CTardella):
+    baseBook:       ceciEstMonCorps1
+    owner:          ctardella
+OwnedBook(cemc2CTardella):
+    baseBook:       ceciEstMonCorps2
+    owner:          ctardella
+
+

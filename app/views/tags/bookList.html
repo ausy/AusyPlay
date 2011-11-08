@@ -1,0 +1,10 @@
+<ul>
+    #{list items:_arg, as:'book'}
+        <li>
+            #{if book.baseBook.serie }
+                <span style='float:left;'>${book.baseBook.serie} #</span>
+            #{/if}
+            <span style='float:left;'>${book}</span>
+        </li> 
+    #{/list}
+</ul>

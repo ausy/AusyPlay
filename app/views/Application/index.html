@@ -1,0 +1,16 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>Books</h1>
+<ul>
+    #{list items:books, as:'book'}
+        <li>${book}</li>
+    #{/list}
+</ul>
+
+<h1>Owned Books</h1>
+<ul>
+    #{list items:ownedBooks, as:'book'}
+        <li>${book.baseBook.title} - ${book.owner.pseudo}</li>
+    #{/list}
+</ul>

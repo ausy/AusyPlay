@@ -1,0 +1,16 @@
+#{extends 'main.html' /}
+#{set title:'Lent' /}
+
+<ul class="booksSection">
+      #{list items:lentBooks, as:'book'}
+	    <li class="borrowedBookLine">${book.baseBook?.serie} + ${book} - Currently borrowed by ${book.borrower} </li>
+    #{/list}
+</ul>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    	
+    });
+</script>

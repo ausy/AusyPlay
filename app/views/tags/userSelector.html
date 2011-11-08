@@ -1,0 +1,8 @@
+ <select name="userId">
+     <option value="">...</option>
+     #{list items:_users, as:'user'}
+         #{if user != _owner }
+            <option value="${user.id}">${user.email}</option>
+         #{/if}
+     #{/list}
+ </select>

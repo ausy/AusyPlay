@@ -1,0 +1,6 @@
+
+Loan(loan1):
+    book:           cemc1CTardella
+    borrower:       cpetitjean
+    begin:          2011-04-10
+    end:            2011-04-20
