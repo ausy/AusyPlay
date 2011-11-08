@@ -37,26 +37,6 @@
 			<location>C:/Users/Kebuu/Documents/Informatique/play/play-1.2/modules/secure/app</location>
 		</link>
 		<link>
-			<name>src-1</name>
-			<type>2</type>
-			<location>C:/Users/Kebuu/Documents/Informatique/play/play-1.2/modules/crud/app</location>
-		</link>
-		<link>
-			<name>src-2</name>
-			<type>2</type>
-			<location>C:/Users/Kebuu/Documents/Informatique/play/play-1.2/modules/secure/app</location>
-		</link>
-		<link>
-			<name>src-4</name>
-			<type>2</type>
-			<location>C:/Users/Kebuu/Documents/Informatique/play/play-1.2/modules/crud/app</location>
-		</link>
-		<link>
-			<name>src-7</name>
-			<type>2</type>
-			<location>C:/Users/Kebuu/Documents/Informatique/play/play-1.2/modules/crud/app</location>
-		</link>
-		<link>
 			<name>conf/crud</name>
 			<type>2</type>
 			<location>C:/Users/Kebuu/Documents/Informatique/play/play-1.2/modules/crud/conf</location>
