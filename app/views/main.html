@@ -37,9 +37,9 @@
 	        <div id="nav"></div>
 	        <div id="main">
 	           <div id="collection_panel">
-    		        #{doLayout /}
 	           </div>
 	           <div id="body_panel">
+    		        #{doLayout /}
 	               Contenu a mettre
 	           </div>
 	        </div>
@@ -90,6 +90,7 @@
 		    
 		    $(document).ready(function() {
 		    	// Load collection tree (containing series)
+		    	$('#collection_panel').load('@{SerieCtrl.userSeries}');
 		    });
 	    </script>
 	    

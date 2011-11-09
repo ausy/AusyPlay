@@ -23,7 +23,7 @@ public class OwnedBook extends Model {
 	}
 
 	@Required
-	@OneToOne
+	@ManyToOne
 	public Book baseBook;
 
 	@Required
