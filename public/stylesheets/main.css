@@ -50,9 +50,6 @@ html, body {
 }
 
 #bdmanager #body #body_panel {
-    border-color: black;
-    border-width: 1px;
-    border-style: solid;
     width: 79%;
     float: left;
 }
@@ -62,5 +59,14 @@ html, body {
     font-size: 0.7em;
     text-align: center;
     clear: both;
-    float: left;
+}
+
+#bdmanager #body .userBooksBySerie .deleteFromSerie {
+    color: blue;
+    text-decoration: underline;
+    font-size: 0.8em;
+}
+
+#bdmanager #body .userBooksBySerie .deleteFromSerie:hover {
+    cursor: pointer;
 }

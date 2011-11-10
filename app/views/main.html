@@ -9,6 +9,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="@{'/public/images/my-favicon.png'}">
         <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="utf-8"></script>
         <script src="@{'/public/javascripts/jquery.menu.min.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public/javascripts/jquery.jstree.js'}" type="text/javascript" charset="utf-8"></script>
     </head>
     <body id="bdmanager">
     
@@ -40,57 +41,57 @@
 	           </div>
 	           <div id="body_panel">
     		        #{doLayout /}
-	               Contenu a mettre
 	           </div>
 	        </div>
 	        <div id="bottom">Some copyright here ... or not </div>
 	    </div>
 	    
 	    <script language="javascript" type="text/javascript">
-		    var MENU_URLS = { 
-	    		menu_1: '@{Collection.display(flash?.loggedUserId)}',
-	    		menu_2: '@{Collection.manage}',
-	    		menu_2_1: '@{Collection.history(flash?.loggedUserId)}',
-	    		menu_2_2: '@{Collection.display(flash?.loggedUserId)}',
-	    		menu_3: '@{Collection.display(flash?.loggedUserId)}',
-	    		menu_4: '@{Secure.logout}'
-		    };
-		    
-		    $('.menu_1').click(function() {
-		    	window.location = '@{Collection.display(flash?.loggedUserId)}';
-		    });
-		    $('.menu_2').click(function() {
-		    	//window.location = '@{Collection.manage}';
-		    });
-		    $('.menu_2_1').click(function() {
-		    	window.location = '@{Collection.history(flash?.loggedUserId)}';
-		    });
-		    $('.menu_2_2').click(function() {
-		    	window.location = '@{Collection.display(flash?.loggedUserId)}';
-		    });
-		    $('.menu_4').click(function() {
-		    	window.location = '@{Collection.display(flash?.loggedUserId)}';
-		    });
-		    $('.menu_4').click(function() {
-		    	window.location = '@{Secure.logout}';
-		    });
-		    
-		    var options = {
-		    		minWidth: 120, 
-		    		arrowSrc: "@{'/public/images/arrow_right.gif'}", 
-		    		copyClassAttr: true,
-		    		hoverOpenDelay: 300, 
-		    		onClick: function(e, menuItem){
-		    			$.Menu.closeAll();
-				    	console.log(menuItem);
-				    }
-    		};
-		    
-		    $('#menuone').menu(options);
+	    	AusyPlay = {
+	    		    events: {
+	    		    	selectedSerie:'serie_selected'
+	    		    } 
+	    	}
 		    
 		    $(document).ready(function() {
+		    
+		    	
+		    	// Set up menubar actions
+			    $('.menu_1').click(function() {
+			    	window.location = '@{Collection.display(flash?.loggedUserId)}';
+			    });
+			    $('.menu_2').click(function() {
+			    	//window.location = '@{Collection.manage}';
+			    });
+			    $('.menu_2_1').click(function() {
+			    	window.location = '@{Collection.history(flash?.loggedUserId)}';
+			    });
+			    $('.menu_2_2').click(function() {
+			    	window.location = '@{Collection.display(flash?.loggedUserId)}';
+			    });
+			    $('.menu_4').click(function() {
+			    	window.location = '@{Collection.display(flash?.loggedUserId)}';
+			    });
+			    $('.menu_4').click(function() {
+			    	window.location = '@{Secure.logout}';
+			    });
+		    
+			    // Set up menu bar design
+			    var options = {
+			    		minWidth: 120, 
+			    		arrowSrc: "@{'/public/images/arrow_right.gif'}", 
+			    		copyClassAttr: true,
+			    		hoverOpenDelay: 300, 
+			    		onClick: function(e, menuItem){
+			    			$.Menu.closeAll();
+					    	console.log(menuItem);
+					    }
+	    		};
+			    $('#menuone').menu(options);
+		    
 		    	// Load collection tree (containing series)
 		    	$('#collection_panel').load('@{SerieCtrl.userSeries}');
+		    	
 		    });
 	    </script>
 	    

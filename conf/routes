@@ -11,6 +11,8 @@ GET     /                                           Application.index
 # Collection pages
 GET     /collections/{userId}                       Collection.display
 *       /userSeries                                 SerieCtrl.userSeries
+*       /booksInSerie/{serieId}                     SerieCtrl.booksInSerie
+*       /deleteBookInSerie                          SerieCtrl.deleteBookInSerie
 
 
 GET     /collection/select/{bookId}/{selected}      Collection.selectUnselectBook
