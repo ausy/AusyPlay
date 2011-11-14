@@ -1,12 +1,10 @@
 package com.kebuu;
 
 import service.HistoryService;
-import service.LoanService;
 
 import com.google.inject.AbstractModule;
 
 import controllers.Collection;
-import controllers.LoanCtrl;
 
 public class BDManagerModule extends AbstractModule{
 
