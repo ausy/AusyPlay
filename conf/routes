@@ -18,15 +18,6 @@ GET     /collections/{userId}                       Collection.display
 *       /loan/ouput                                 LoanCtrl.output
 *       /loan                                       LoanCtrl.all
 
-
-GET     /collection/select/{bookId}/{selected}      Collection.selectUnselectBook
-GET     /history/{borrowerId}/{ownerId}             Collection.history
-GET     /history/{borrowerId}                       Collection.history
-GET     /history/?                                  Collection.history
-GET     /collections/manage                         Collection.manage
-GET     /collections/lent                           Collection.lentBooks
-POST    /borrow                                     Collection.borrowsBook
-POST    /return/{ownedBookId}                       Collection.returnsBook
 *       /hey                                        Collection.helloNorbert
 
 # Import CRUD routes

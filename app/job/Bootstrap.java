@@ -10,7 +10,7 @@ public class Bootstrap extends Job {
 
 	@Override
 	public void doJob() {
-//		Fixtures.deleteDatabase();
+		Fixtures.deleteDatabase();
 		if (Book.count() == 0) {
 			Fixtures.loadModels("initial-data/all.yml","initial-data/history.yml");
 		}

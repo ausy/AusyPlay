@@ -34,21 +34,6 @@ public class OwnedBook extends Model {
 	@CheckWith(OwnedBookBorrowerCheck.class)
 	public User borrower;
 
-	public boolean isBorrowable;
-	public boolean isAvailable;
-
-	public OwnedBook borrows(final User user) {
-		this.borrower = user;
-		this.isAvailable = false;
-		return this;
-	}
-
-	public OwnedBook returns() {
-		this.borrower = null;
-		this.isAvailable = true;
-		return this;
-	}
-
 	@Override
 	public String toString() {
 		return this.baseBook.toString() + " (" + this.owner.pseudo + ")";
