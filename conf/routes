@@ -9,7 +9,7 @@ GET     /favicon.ico                            404
 GET     /                                           Application.index
 
 # Collection pages
-GET     /collections/{userId}                       Collection.display
+GET     /collections                                Collection.display
 *       /userSeries                                 SerieCtrl.userSeries
 *       /booksInSerie/{serieId}                     SerieCtrl.booksInSerie
 *       /deleteBookInSerie                          SerieCtrl.deleteBookInSerie
@@ -18,7 +18,7 @@ GET     /collections/{userId}                       Collection.display
 *       /loan/ouput                                 LoanCtrl.output
 *       /loan                                       LoanCtrl.all
 
-*       /hey                                        Collection.helloNorbert
+*       /hey                                        Collection.helloAusy
 
 # Import CRUD routes
 *      /crud                                    module:crud

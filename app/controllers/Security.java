@@ -22,7 +22,6 @@ public class Security extends Secure.Security {
 	 * Url to redirect after autentication.
 	 */
 	static void onAuthenticated() {
-		User user = User.find("byEmail", Security.connected()).first();
-		Collection.display(user.id);
+		Collection.display();
 	}
 }

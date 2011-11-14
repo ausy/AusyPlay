@@ -50,8 +50,9 @@ html, body {
 }
 
 #bdmanager #body #body_panel {
-    width: 79%;
+    width: 78%;
     float: left;
+    margin-left: 1%;
 }
 
 #bdmanager #body #bottom {
