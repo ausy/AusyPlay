@@ -7,8 +7,14 @@ import service.LoanService;
 
 import com.google.inject.Inject;
 
+/**
+ * Controllers for Loan.
+ */
 public class LoanCtrl extends LoggedApplication {
 	
+	/**
+	 * Here is the loanService injected by Guice.
+	 */
 	@Inject
 	public static LoanService loanService;
 	

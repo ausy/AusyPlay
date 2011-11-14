@@ -6,6 +6,9 @@ import com.google.inject.AbstractModule;
 
 import controllers.LoanCtrl;
 
+/**
+ * Contains Guice configuration.
+ */
 public class BDManagerModule extends AbstractModule{
 
 	@Override

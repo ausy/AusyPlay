@@ -18,7 +18,6 @@ import play.exceptions.UnexpectedException;
 
 /**
  * Check which proof if one or a set of properties is unique.
- * 
  */
 public class UniqueCheck extends AbstractAnnotationCheck<Unique> {
 

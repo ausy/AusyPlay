@@ -1,5 +1,8 @@
 package com.kebuu;
 
+/**
+ * List of operators for JPQL request.
+ */
 public enum ConditionType {
 	
 	EQ(" = "),
