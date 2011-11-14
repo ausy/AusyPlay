@@ -1,0 +1,10 @@
+<ul>
+    <li><a>Mes Series</a>
+	    <ul>
+		    #{list items:_arg, as:'serie'}
+		        <!-- The markup <a> is mandatory to make the jstree working -->
+		        <li id="${serie.id}"><a>${serie.name}</a></li> 
+		    #{/list}
+	    </ul>
+    </li>
+</ul>

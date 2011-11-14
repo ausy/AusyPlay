@@ -1,0 +1,39 @@
+<div class="userBooksBySerie">
+	#{if booksInSerieForUser}
+	    Mes BD dans "${serie.name}"
+		<ul>
+		    #{list items:booksInSerieForUser, as:'book'}
+		        <li>#${book.number} - ${book.title} <span id="${book.id}" class="deleteFromSerie">Supprimer</span></li> 
+		    #{/list}
+		</ul>
+	#{/if}
+		
+		<p></p>
+	
+		#{if booksInSerie}
+	        BD manquantes dans "${serie.name}"
+	    
+		    <ul>
+		        #{list items:booksInSerie, as:'book'}
+		            <li>#${book.number} - ${book.title} <span id="${book.id}" class="addInSerie">Ajouter</span></li> 
+		        #{/list}
+		    </ul>	
+	    #{/if}
+
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function() {
+			
+		    var deleteAction = #{jsAction @SerieCtrl.deleteBookInSerie(':serieId', ':bookId') /}
+		    var addAction = #{jsAction @SerieCtrl.addBookInSerie(':serieId', ':bookId') /}
+		    
+		    $('.userBooksBySerie .deleteFromSerie').click(function(e){
+		    	$('.userBooksBySerie').parent().load(deleteAction({serieId: ${serie.id}, bookId: e.target.id}));
+		    });    
+		    
+		    $('.userBooksBySerie .addInSerie').click(function(e){
+		    	$('.userBooksBySerie').parent().load(addAction({serieId: ${serie.id}, bookId: e.target.id}));
+		    });    
+		});
+	</script>
+</div>
+

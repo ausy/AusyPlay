@@ -1,0 +1,40 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h2>My Collection</h2>
+ <ul>
+    #{list items:user.books, as:'book'}
+        <li class="withInlineForm">
+            #{if book.baseBook.serie }
+			    <span style='float:left;'>${book.baseBook.serie} #</span>
+			#{/if}
+			
+		    <span style='float:left;'>${book}</span>
+		    
+            #{if book.borrower }
+			    - Currently borrowed by ${book.borrower}
+			    #{a @Collection.returnedBook(book.id)}Returned#{/a}
+			#{/if}
+            #{else}
+			    <span style='float:left;'>- Mark borrowed by&nbsp;</span>
+                <form action="@{Collection.borrowedBook}" class="withinLi" method="post">
+                    #{userSelector users:users, owner:book.owner /}
+					<input type="hidden" name="ownedBookId" value="${book.id}" />
+					<input type="submit" value="Ok" />
+                </form>
+			#{/else}
+        </li> 
+    #{/list}
+</ul>
+
+<h2 class="onNewLine">My borrowed books</h2>
+<ul>
+    #{list items:user.currentlyBorrowedBooks, as:'book'}
+        <li>
+            #{if book.baseBook.serie }
+			    <span style='float:left;'>${book.baseBook.serie} #</span>
+			#{/if}
+		    <span style='float:left;'>${book}</span>
+        </li> 
+    #{/list}
+</ul>
