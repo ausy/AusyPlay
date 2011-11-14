@@ -13,6 +13,10 @@ GET     /collections/{userId}                       Collection.display
 *       /userSeries                                 SerieCtrl.userSeries
 *       /booksInSerie/{serieId}                     SerieCtrl.booksInSerie
 *       /deleteBookInSerie                          SerieCtrl.deleteBookInSerie
+*       /addBookInSerie                             SerieCtrl.addBookInSerie
+*       /loan/input                                 LoanCtrl.input
+*       /loan/ouput                                 LoanCtrl.output
+*       /loan                                       LoanCtrl.all
 
 
 GET     /collection/select/{bookId}/{selected}      Collection.selectUnselectBook

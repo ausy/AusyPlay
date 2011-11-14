@@ -210,38 +210,34 @@ User(dbernard):
     pseudo:        dbernard
     password:      secret
 
-OwnedBook(tueur1CTardella):
+OwnedBook(tueur1CPN):
     baseBook:       tueur1
-    owner:          ctardella
-    borrower:       ecanale
-OwnedBook(tueur2CTardella):
+    owner:          cpetitjean
+    borrower:       ctardella
+OwnedBook(tueur2CPN):
     baseBook:       tueur2
-    owner:          ctardella
-    borrower:       ecanale
-OwnedBook(tueur3CTardella):
+    owner:          cpetitjean
+    borrower:       ctardella
+OwnedBook(tueur3CPN):
     baseBook:       tueur3
-    owner:          ctardella
-    borrower:       ecanale
-OwnedBook(tueur4CTardella):
+    owner:          cpetitjean
+    borrower:       ctardella
+OwnedBook(tueur4CPN):
     baseBook:       tueur4
     owner:          ctardella
     borrower:       ecanale
-OwnedBook(yiuPM1CTardella):
+OwnedBook(yiuPM1ECE):
     baseBook:       yiuPM1
-    owner:          ctardella
-    borrower:       ecanale
-OwnedBook(yiuPM2CTardella):
+    owner:          ecanale
+    borrower:       ctardella
+OwnedBook(yiuPM2ECE):
     baseBook:       yiuPM2
-    owner:          ctardella
-    borrower:       ecanale
+    owner:          ecanale
+    borrower:       ctardella
 OwnedBook(yiuPM5CTardella):
     baseBook:       yiuPM5
     owner:          ctardella
     borrower:       ecanale
-OwnedBook(yiuPM6CTardella):
-    baseBook:       yiuPM1
-    owner:          ctardella
-    borrower:       cpetitjean
 OwnedBook(dany1CTardella):
     baseBook:       dany1
     owner:          ctardella
@@ -254,15 +250,16 @@ OwnedBook(cuervos2CTardella):
     baseBook:       cuervos2
     owner:          ctardella
     borrower:       ecanale
-OwnedBook(leFeul1CTardella):
+OwnedBook(leFeul1ECE):
     baseBook:       leFeul1
-    owner:          ctardella
-OwnedBook(leFeul2CTardella):
+    owner:          ecanale
+OwnedBook(leFeul2ECE):
     baseBook:       leFeul2
-    owner:          ctardella
-OwnedBook(leFeul3CTardella):
+    owner:          ecanale
+OwnedBook(leFeul3ECE):
     baseBook:       leFeul3
-    owner:          ctardella
+    owner:          ecanale
+    borrower:       ctardella
 OwnedBook(sinCity1CTardella):
     baseBook:       sinCity1
     owner:          ctardella
@@ -325,11 +322,11 @@ OwnedBook(naja5CTardella):
     baseBook:       naja5
     owner:          ctardella
     borrower:       cteule
-OwnedBook(cemc1CTardella):
+OwnedBook(cemc1CPN):
     baseBook:       ceciEstMonCorps1
-    owner:          ctardella
-OwnedBook(cemc2CTardella):
+    owner:          cpetitjean
+OwnedBook(cemc2CPN):
     baseBook:       ceciEstMonCorps2
-    owner:          ctardella
+    owner:          cpetitjean
 
 

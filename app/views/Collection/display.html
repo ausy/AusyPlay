@@ -10,10 +10,9 @@ $(document).ready(function() {
 	var action = #{jsAction @SerieCtrl.booksInSerie(':serieId') /}
 	
 	$(document).bind(AusyPlay.events.selectedSerie, function(e, serieId) {
-		console.log(this, e, serieId);
-		
-	    $("#myCollectionContent").load(action({serieId: serieId}));
-		
+		if(serieId) {
+		    $("#myCollectionContent").load(action({serieId: serieId}));
+		}
 	});
 	
 });

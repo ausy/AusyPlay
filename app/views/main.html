@@ -27,7 +27,7 @@
 		                <li class="menu_2_3">Tous</li>
 		            </ul>
 		        </li>
-		        <li class="menumain menu_3">Ajouter Bd
+		        <li class="menumain menu_3">Ajouter BD
                 </li>
 		        <li class="menumain menu_4">Deconnexion
                 </li>
@@ -60,17 +60,8 @@
 			    $('.menu_1').click(function() {
 			    	window.location = '@{Collection.display(flash?.loggedUserId)}';
 			    });
-			    $('.menu_2').click(function() {
-			    	//window.location = '@{Collection.manage}';
-			    });
-			    $('.menu_2_1').click(function() {
-			    	window.location = '@{Collection.history(flash?.loggedUserId)}';
-			    });
-			    $('.menu_2_2').click(function() {
-			    	window.location = '@{Collection.display(flash?.loggedUserId)}';
-			    });
 			    $('.menu_4').click(function() {
-			    	window.location = '@{Collection.display(flash?.loggedUserId)}';
+			    	window.location = '@{Collection.display}';
 			    });
 			    $('.menu_4').click(function() {
 			    	window.location = '@{Secure.logout}';
@@ -84,7 +75,16 @@
 			    		hoverOpenDelay: 300, 
 			    		onClick: function(e, menuItem){
 			    			$.Menu.closeAll();
-					    	console.log(menuItem);
+			    			
+			    			var cssClass = menuItem.addClass;
+			    			
+			    			if(cssClass === "menu_2_1") {
+			    				$('#myCollectionContent').load('@{LoanCtrl.input}');
+			    			} else if(cssClass === "menu_2_2") {
+			    				$('#myCollectionContent').load('@{LoanCtrl.output}');
+			    			} else if(cssClass === "menu_2_3") {
+			    				$('#myCollectionContent').load('@{LoanCtrl.all}');
+                            } 
 					    }
 	    		};
 			    $('#menuone').menu(options);

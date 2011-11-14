@@ -12,12 +12,12 @@ public enum ConditionType {
 	
 	protected String symbol;
 	
-	private ConditionType(String op) {
+	private ConditionType(final String op) {
 		this.symbol = op;
 	}
 
 	public String getSymbol() {
-		return symbol;
+		return this.symbol;
 	}
 }
 

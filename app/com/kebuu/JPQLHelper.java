@@ -12,6 +12,9 @@ import javax.persistence.Query;
 import play.db.jpa.GenericModel.JPAQuery;
 import play.db.jpa.JPA;
 
+/**
+ * CAUTION: do not use JPQLHelper to manage nested Query !
+ */
 public class JPQLHelper {
 
 	protected StringBuilder queryBuilder;
@@ -43,8 +46,15 @@ public class JPQLHelper {
 				this.jpaQuery.bind(parameterEntry.getKey(), parameterEntry.getValue());
 			}
 			
-			// Bind new parameter and rebind the others
+			// Flag the use of where
 			this.whereAlreadyUsed = true;
+		}
+		return this;
+	}
+	
+	public JPQLHelper addOrderByCondition(final String orderByCondition) {
+		if (orderByCondition != null ) {
+			this.queryBuilder.append(this.OrderByOrComma() + orderByCondition +  " ");
 		}
 		return this;
 	}
@@ -98,6 +108,14 @@ public class JPQLHelper {
 			return " and ";
 		} else {
 			return " where ";
+		}
+	}
+	
+	private String OrderByOrComma() {
+		if (this.queryBuilder.toString().matches("(?i).*order\\s+by.*")) {
+			return " , ";
+		} else {
+			return " order by ";
 		}
 	}
 

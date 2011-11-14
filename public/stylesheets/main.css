@@ -61,12 +61,17 @@ html, body {
     clear: both;
 }
 
-#bdmanager #body .userBooksBySerie .deleteFromSerie {
+#bdmanager #body .userBooksBySerie .deleteFromSerie, #bdmanager #body .userBooksBySerie .addInSerie  {
     color: blue;
     text-decoration: underline;
     font-size: 0.8em;
 }
 
-#bdmanager #body .userBooksBySerie .deleteFromSerie:hover {
+#bdmanager #body .userBooksBySerie .deleteFromSerie:hover, #bdmanager #body .userBooksBySerie .addInSerie:hover {
     cursor: pointer;
+}
+
+#bdmanager #body .info {
+    font-size: 0.8em;
+    font-style: italic;
 }
