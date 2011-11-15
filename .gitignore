@@ -1,3 +1,6 @@
 tmp
-eclipse/classes
+eclipse
+.classpath
+.project
+modules
 bin
