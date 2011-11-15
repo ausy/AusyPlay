@@ -13,7 +13,11 @@ import com.kebuu.JPQLHelper;
 public class SerieCtrl extends LoggedApplication {
 
 	public static void userSeries() {
-		List<Serie> userSeries = Serie.find("select distinct bb.serie from OwnedBook ob join ob.baseBook bb where ob.owner.id = (:userId) order by bb.serie.name")
+		List<Serie> userSeries = Serie.find("select distinct s " +
+				"from OwnedBook ob " +
+				"join ob.baseBook bb " +
+				"join bb.serie s " +
+				"where ob.owner.id = (:userId) order by s.name")
 			.bind("userId", getConnectedUser().id).fetch();
 		render(userSeries);
 	}
