@@ -3,10 +3,10 @@
 # ~~~~
 
 # Ignore favicon requests
-GET     /favicon.ico                            404
+GET     /favicon.ico                                404
 
 # Home page
-GET     /                                           Application.index
+GET     /                                           Collection.display
 
 # Collection pages
 GET     /collections                                Collection.display
