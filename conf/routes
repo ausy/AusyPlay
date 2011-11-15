@@ -10,6 +10,8 @@ GET     /                                           Collection.display
 
 # Collection pages
 GET     /collections                                Collection.display
+*       /book/prepareAdd                            BookCtrl.prepareAdd
+*       /book/addBook                               BookCtrl.addBook
 *       /userSeries                                 SerieCtrl.userSeries
 *       /booksInSerie/{serieId}                     SerieCtrl.booksInSerie
 *       /deleteBookInSerie                          SerieCtrl.deleteBookInSerie

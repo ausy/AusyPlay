@@ -28,8 +28,7 @@
 		                <li class="menu_2_3">Tous</li>
 		            </ul>
 		        </li>
-		        <li class="menumain menu_3">Ajouter BD
-                </li>
+		        <li class="menumain menu_3">Ajouter BD</li>
 		        <li class="menumain menu_4">Deconnexion
                 </li>
 		    </ul>
@@ -60,6 +59,9 @@
 		    	// Set up menubar actions
 			    $('.menu_1').click(function() {
 			    	window.location = '@{Collection.display}';
+			    });
+			    $('.menu_3').click(function() {
+			    	window.location = '@{BookCtrl.prepareAdd}';
 			    });
 			    $('.menu_4').click(function() {
 			    	window.location = '@{Collection.display}';

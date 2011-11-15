@@ -1,0 +1,36 @@
+#{extends 'main.html' /}
+#{set title:'Ajouter une BD' /}
+
+<p>ceci est la page de add book</p>
+#{form @BookCtrl.addBook(), method:'GET', id:'createBookForm'}
+
+<p>
+  <label>Serie </label>
+  #{select 'book.serie', items:listeSeries, valueProperty:'id', labelProperty:'name', id:'book_serie2' }
+  #{option 0}Nouvelle série#{/option}
+  #{/select}
+</p>
+
+#{field 'book.number'}
+<p>
+  <label>Number </label>
+  <input type="text" id="${field.id}" name="${field.name}" value="${field.value}">
+</p>
+#{/}
+
+#{field 'book.isbn'}
+<p>
+  <label>ISBN </label>
+  <input type="text" id="${field.id}" name="${field.name}" value="${field.value}">
+</p>
+#{/}
+
+#{field 'book.title'}
+<p>
+  <label>Titre </label>
+  <input type="text" id="${field.id}" name="${field.name}" value="${field.value}">
+</p>
+#{/}
+
+<input type="submit" value="Ajouter">
+#{/form}
