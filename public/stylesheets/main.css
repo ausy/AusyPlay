@@ -1,65 +1,6 @@
 /** Main layout **/
-
-html, body {
-    font-family: Helvetica, Arial, Sans;
-    font: 1em;
-    margin: 0.5em;
-}
-
-#bdmanager #header {
-
-}
-
-#bdmanager #header img {
-    width: 200px;
-}
-
-#bdmanager #menu-top {
-	height: 2em;
-	border-color: black;
-	border-width: 1px;
-	border-style: solid;
-    margin-top: 1em;
-}
-
-#bdmanager #body {
-    margin-top: 5px;
-}
-
-#bdmanager #body #nav {
-	display: none;
-	height: 1em;
-	border-color: black;
-	border-width: 1px;
-	border-style: solid;
-    margin-top: 1em;
-}
-
-#bdmanager #body #main {
-    margin-top: 1em;
-    float: left;
-    width: 100%;
-}
-
-#bdmanager #body #collection_panel {
-    border-color: black;
-    border-width: 1px;
-    border-style: solid;
-    width: 20%;
-    float: left;
-}
-
-#bdmanager #body #body_panel {
-    width: 78%;
-    float: left;
-    margin-left: 1%;
-}
-
-#bdmanager #body #bottom {
-    margin-top: 1em;
-    font-size: 0.7em;
-    text-align: center;
-    clear: both;
+#bdmanager {
+    padding: 50px 0 0 0;
 }
 
 #bdmanager #body .userBooksBySerie .deleteFromSerie, #bdmanager #body .userBooksBySerie .addInSerie  {
@@ -68,7 +9,7 @@ html, body {
     font-size: 0.8em;
 }
 
-#bdmanager #body .userBooksBySerie .deleteFromSerie:hover, #bdmanager #body .userBooksBySerie .addInSerie:hover {
+#bdmanager #body .userBooksBySerie .deleteFromSerie:hover, #bdmanager #body .userBooksBySerie .addInSerie:hover, .serie-list-item:hover {
     cursor: pointer;
 }
 

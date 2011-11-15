@@ -4,97 +4,79 @@
     <head>
         <title>#{get 'title' /}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/bootstrap.min.css'}">
         <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}">
         <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/menu.css'}">
-        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/bootstrap.min.css'}">
         <link rel="shortcut icon" type="image/x-icon" href="@{'/public/images/my-favicon.png'}">
         <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="utf-8"></script>
         <script src="@{'/public/javascripts/jquery.menu.min.js'}" type="text/javascript" charset="utf-8"></script>
         <script src="@{'/public/javascripts/jquery.jstree.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public/javascripts/bootstrap-dropdown.js'}" type="text/javascript" charset="utf-8"></script>
     </head>
+    
     <body id="bdmanager">
     
-	    <div id="header">
-	       <img alt="logo" src="@{'/public/images/ausy.jpg'}">
-	    </div>
-	    
-	    <div id="menu-top">
-		    <ul id="menuone" class="menu">
-		        <li class="menumain menu_1">Ma collection</li>
-		        <li class="menumain menu_2">Emprunts
-		            <ul><li class="menu_2_1">Entrants</li>
-		                <li class="menu_2_2">Sortants</li>
-		                <li></li> 
-		                <li class="menu_2_3">Tous</li>
-		            </ul>
-		        </li>
-		        <li class="menumain menu_3">Ajouter BD
-                </li>
-		        <li class="menumain menu_4">Deconnexion
-                </li>
-		    </ul>
-	    </div>
-	    
-	    <div id="body">
-	        <div id="nav"></div>
-	        <div id="main">
-	           <div id="collection_panel">
-	           </div>
-	           <div id="body_panel">
-    		        #{doLayout /}
-	           </div>
+	    <div class="topbar">
+	      <div class="topbar-inner">
+	        <div class="container">
+	          <h3><a>AusyPlay <img alt="logo" src="@{'/public/images/ausy.jpg'}" height="15"/></a></h3>
+	          <ul class="nav">
+	            <li><a href="@{Collection.display}">Ma collection</a></li>
+	            <li class="dropdown" data-dropdown="dropdown">
+	              <a href="#" class="dropdown-toggle">Emprunts</a>
+	              <ul class="dropdown-menu">
+	                <li><a href="#" class="menu_2_1">Entrants</a></li>
+	                <li><a href="#" class="menu_2_2">Sortants</a></li>
+	                <li class="divider"></li>
+	                <li><a href="#" class="menu_2_3">Tous</a></li>
+	              </ul>
+	            </li>
+	            <li><a href="#">Ajouter BD</a></li>
+	            <li><a href="@{Secure.logout}">Déconnexion</a></li>
+	          </ul>
 	        </div>
-	        <div id="bottom">Some copyright here ... or not </div>
+	      </div>
 	    </div>
 	    
-	    <script language="javascript" type="text/javascript">
-	    	AusyPlay = {
-	    		    events: {
-	    		    	selectedSerie:'serie_selected'
-	    		    } 
-	    	}
-		    
-		    $(document).ready(function() {
-		    
-		    	
-		    	// Set up menubar actions
-			    $('.menu_1').click(function() {
-			    	window.location = '@{Collection.display}';
-			    });
-			    $('.menu_4').click(function() {
-			    	window.location = '@{Collection.display}';
-			    });
-			    $('.menu_4').click(function() {
-			    	window.location = '@{Secure.logout}';
-			    });
-		    
-			    // Set up menu bar design
-			    var options = {
-			    		minWidth: 120, 
-			    		arrowSrc: "@{'/public/images/arrow_right.gif'}", 
-			    		copyClassAttr: true,
-			    		hoverOpenDelay: 300, 
-			    		onClick: function(e, menuItem){
-			    			$.Menu.closeAll();
-			    			
-			    			var cssClass = menuItem.addClass;
-			    			
-			    			if(cssClass === "menu_2_1") {
-			    				$('#myCollectionContent').load('@{LoanCtrl.input}');
-			    			} else if(cssClass === "menu_2_2") {
-			    				$('#myCollectionContent').load('@{LoanCtrl.output}');
-			    			} else if(cssClass === "menu_2_3") {
-			    				$('#myCollectionContent').load('@{LoanCtrl.all}');
-                            } 
-					    }
-	    		};
-			    $('#menuone').menu(options);
-		    
-		    	// Load collection tree (containing series)
-		    	$('#collection_panel').load('@{SerieCtrl.userSeries}');
-		    	
+	    <div class="container-fluid">
+			<div class="sidebar">
+                <div id="collection_panel"></div>
+			</div>
+			<div class="content">
+			     #{doLayout /}
+			</div>
+		</div>
+
+		<script language="javascript" type="text/javascript">
+		
+		var AusyPlay = {
+			    events: {
+			    	selectedSerie:'serie_selected'
+			    } 
+		};
+		 
+		$(document).ready(function() {
+		 	
+		 	// Set up menubar actions
+		    $('.topbar .menu_2_1').click(function() {
+		        $('#myCollectionContent').load('@{LoanCtrl.input}');
 		    });
-	    </script>
+		    $('.topbar .menu_2_2').click(function() {
+		        $('#myCollectionContent').load('@{LoanCtrl.output}');
+		    });
+		    $('.topbar .menu_2_3').click(function() {
+		        $('#myCollectionContent').load('@{LoanCtrl.all}');
+		    });
+		 
+			// Set up menu bar design
+		    $('.topbar').dropdown();
+		 
+		 	// Load collection tree (containing series)
+		 	$('#collection_panel').load('@{SerieCtrl.userSeries}');
+		 	
+		});
+			
+		</script>
 	    
     </body>
 </html>

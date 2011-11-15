@@ -1,9 +1,9 @@
-<ul>
-    <li><a>Mes Series</a>
+<ul class="unstyled">
+    <li>Mes Series
 	    <ul>
 		    #{list items:_arg, as:'serie'}
 		        <!-- The markup <a> is mandatory to make the jstree working -->
-		        <li id="${serie.id}"><a>${serie.name}</a></li> 
+		        <li id="${serie.id}" class="serie-list-item"><a>${serie.name}</a></li> 
 		    #{/list}
 	    </ul>
     </li>
