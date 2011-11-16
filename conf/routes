@@ -17,6 +17,7 @@ GET     /collections                                Collection.display
 *       /loan/input                                 LoanCtrl.input
 *       /loan/ouput                                 LoanCtrl.output
 *       /loan                                       LoanCtrl.all
+*       /email                                      Application.email
 
 *       /hey                                        Collection.helloAusy
 

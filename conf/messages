@@ -1,3 +1,8 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
 #
+email=Adresse électonique
+pseudo=Pseudo
+password=Mot de passe
+id=Identifiant technique
+name=Nom
