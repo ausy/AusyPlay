@@ -31,7 +31,7 @@
 	                <li><a href="#" class="menu_2_3">Tous</a></li>
 	              </ul>
 	            </li>
-	            <li><a href="#">Ajouter BD</a></li>
+	            <li><a href="@{BookCtrl.prepareAdd}">Ajouter BD</a></li>
 	            <li><a href="@{Secure.logout}">Déconnexion</a></li>
 	          </ul>
 	        </div>
@@ -43,40 +43,51 @@
                 <div id="collection_panel"></div>
 			</div>
 			<div class="content">
-			     #{doLayout /}
+                <div id="myCollectionContent">
+				     #{doLayout /}
+                </div>
 			</div>
 		</div>
 
 		<script language="javascript" type="text/javascript">
 		
-		var AusyPlay = {
-			    events: {
-			    	selectedSerie:'serie_selected'
-			    } 
-		};
-		 
-		$(document).ready(function() {
-		 	
-		 	// Set up menubar actions
-		    $('.topbar .menu_2_1').click(function() {
-		        $('#myCollectionContent').load('@{LoanCtrl.input}');
-		    });
-		    $('.topbar .menu_2_2').click(function() {
-		        $('#myCollectionContent').load('@{LoanCtrl.output}');
-		    });
-		    $('.topbar .menu_2_3').click(function() {
-		        $('#myCollectionContent').load('@{LoanCtrl.all}');
-		    });
-		 
-			// Set up menu bar design
-		    $('.topbar').dropdown();
-		 
-		 	// Load collection tree (containing series)
-		 	$('#collection_panel').load('@{SerieCtrl.userSeries}');
-		 	
-		});
-			
-		</script>
-	    
+			var AusyPlay = {
+				    events: {
+				    	selectedSerie:'serie_selected'
+				    } 
+			};
+			 
+			$(document).ready(function() {
+			 	
+			 	// Set up menubar actions
+			    $('.topbar .menu_2_1').click(function() {
+			        $('#myCollectionContent').load('@{LoanCtrl.input}');
+			    });
+			    $('.topbar .menu_2_2').click(function() {
+			        $('#myCollectionContent').load('@{LoanCtrl.output}');
+			    });
+			    $('.topbar .menu_2_3').click(function() {
+			        $('#myCollectionContent').load('@{LoanCtrl.all}');
+			    });
+			 
+				// Set up menu bar design
+			    $('.topbar').dropdown();
+			 
+			 	// Load collection tree (containing series)
+			 	$('#collection_panel').load('@{SerieCtrl.userSeries}');
+			 	
+			 	
+			 	// Manage left panel
+			    var action = #{jsAction @SerieCtrl.booksInSerie(':serieId') /}
+			    
+			    $(document).bind(AusyPlay.events.selectedSerie, function(e, serieId) {
+			        if(serieId) {
+			            $("#myCollectionContent").load(action({serieId: serieId}));
+			        }
+			    });
+
+			});
+		
+		</script>	    
     </body>
 </html>
