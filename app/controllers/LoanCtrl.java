@@ -2,7 +2,7 @@ package controllers;
 
 import java.util.List;
 
-import models.Loan;
+import models.OwnedBook;
 import service.LoanService;
 
 import com.google.inject.Inject;
@@ -19,18 +19,18 @@ public class LoanCtrl extends LoggedApplication {
 	public static LoanService loanService;
 	
 	public static void input() {
-		List<Loan> inputLoans = loanService.getInput(getConnectedUser());
-		render(inputLoans);
+		List<OwnedBook> inputs = loanService.getInput(getConnectedUser());
+		render(inputs);
 	}
 
 	public static void output() {
-		List<Loan> outputLoans = loanService.getOuput(getConnectedUser());
-		render(outputLoans);
+		List<OwnedBook> outputs = loanService.getOuput(getConnectedUser());
+		render(outputs);
 	}
 
 	public static void all() {
-		List<Loan> inputLoans = loanService.getInput(getConnectedUser());
-		List<Loan> outputLoans = loanService.getOuput(getConnectedUser());
-		render(inputLoans, outputLoans);
+		List<OwnedBook> inputs = loanService.getInput(getConnectedUser());
+		List<OwnedBook> outputs = loanService.getOuput(getConnectedUser());
+		render(inputs, outputs);
 	}
 }

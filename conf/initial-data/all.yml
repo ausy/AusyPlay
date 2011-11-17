@@ -1,5 +1,3 @@
-Serie(dany):
-    name:          Dany
 Serie(cuervos):
     name:          Cuervos
 Serie(sinCity):
@@ -39,30 +37,37 @@ Book(tueur4):
     title:        Les liens du sang
     number:       4
     serie:        tueur
-Book(dany1):
-    title:        Ca vous intéresse
-    number:       1
-    serie:        dany
+    
 Book(cuervos1):
-    title:        Cuervos 1
+    title:        Le contrat
     number:       1
     serie:        cuervos
 Book(cuervos2):
-    title:        Cuervos 2
+    title:        Sicaires de la Sainte Coke
     number:       2
     serie:        cuervos
+Book(cuervos3):
+    title:        L'Ange des Maudits
+    number:       3
+    serie:        cuervos
+Book(cuervos4):
+    title:        Requiem
+    number:       4
+    serie:        cuervos
+    
 Book(leFeul1):
     title:        Valnes
     number:       1
     serie:        leFeul
 Book(leFeul2):
-    title:        Les brohms
+    title:        Les Brohms
     number:       2
     serie:        leFeul
 Book(leFeul3):
-    title:        L'Héritage
+    title:        L'héritage
     number:       3
     serie:        leFeul
+    
 Book(sinCity1):
     title:        Sin City
     number:       1
@@ -71,10 +76,15 @@ Book(sinCity2):
     title:        J'ai tué pour elle
     number:       2
     serie:        sinCity
+Book(sinCity3):
+    title:        Valeurs familiales
+    number:       3
+    serie:        sinCity
 Book(sinCity4):
     title:        Cet enfant de salaud
     number:       4
     serie:        sinCity
+    
 Book(matteo1):
     title:        Première époque (1914-1915)
     number:       1
@@ -84,82 +94,97 @@ Book(matteo2):
     number:       2
     serie:        matteo
     
-Book(_500fusils):
-    title:        500 fusils
-    number:       1
-    
 Book(lanfeust1):
     title:        L'ivoire du magohamoth
     number:       1
     serie:        lanfeust
-    
+Book(lanfeust2):
+    title:        Thanos l'incongru
+    number:       2
+    serie:        lanfeust
+Book(lanfeust3):
+    title:        Castel Or-Azur
+    number:       3
+    serie:        lanfeust
 Book(lanfeust4):
     title:        Le paladin d'Eckmül
     number:       4
     serie:        lanfeust
-    
-Book(etoileDuDesert):    
-    title:        Etoile du désert - Intégrale
-    number:       1
+Book(lanfeust5):
+    title:        Le frisson de l'Haruspice
+    number:       5
+    serie:        lanfeust
+Book(lanfeust6):
+    title:        Cixi impératrice
+    number:       6
+    serie:        lanfeust
+Book(lanfeust7):
+    title:        Les pétaures se cachent pour mourir
+    number:       7
+    serie:        lanfeust
+Book(lanfeust8):
+    title:        La bête fabuleuse
+    number:       8
+    serie:        lanfeust
     
 Book(yiuPM1):    
     title:        L'armée des néo-déchêts
     number:       1
     serie:        yiuPM
-    
 Book(yiuPM2):    
     title:        Les résurrections de l’Impure
     number:       2
     serie:        yiuPM
-    
+Book(yiuPM3):    
+    title:        L'impératrice des larmes
+    number:       3
+    serie:        yiuPM
+Book(yiuPM4):    
+    title:        Et le serment des fils
+    number:       4
+    serie:        yiuPM
 Book(yiuPM5):    
     title:        Exfiltration geisha
     number:       5
     serie:        yiuPM
-    
 Book(yiuPM6):    
     title:        L'inquisiteur et la proie
     number:       6
     serie:        yiuPM
     
 Book(murena1):    
-    title:        La meilleur des mères
+    title:        La pourpre et l'or
     number:       1
     serie:        murena
-    
 Book(murena2):    
-    title:        Le sans des bêtes
+    title:        De sable et de sang
     number:       2
     serie:        murena
-
-Book(angela):    
-    title:        Angela
-    number:       1
-
-Book(adiosPalomita):    
-    title:        Adios Palomita
-    number:       1
+Book(murena3):    
+    title:        La meilleure des mères
+    number:       3
+    serie:        murena
+Book(murena4):    
+    title:        Ceux qui vont mourir...
+    number:       4
+    serie:        murena
 
 Book(naja1):    
     title:        Tome 1
     number:       1
     serie:        naja
-
 Book(naja2):    
     title:        Tome 2
     number:       2
     serie:        naja
-
 Book(naja3):    
     title:        Tome 3
     number:       3
     serie:        naja
-
 Book(naja4):    
     title:        Tome 4
     number:       4
     serie:        naja
-
 Book(naja5):    
     title:        Tome 5
     number:       5
@@ -169,7 +194,6 @@ Book(ceciEstMonCorps1):
     title:        Lumière crue
     number:       1
     serie:        ceciEstMonCorps
-
 Book(ceciEstMonCorps2):    
     title:        Surexposition
     number:       2
@@ -177,156 +201,91 @@ Book(ceciEstMonCorps2):
   
 User(ctardella):
     email:         christophe.tardella@gmail.com
-    pseudo:        kebuu
+    pseudo:        ctardella
     password:      secret
-    
-User(opichoud):
-    email:         oriane.pichoud@gmail.com
-    pseudo:        opichoud
+User(nchenais):
+    email:         norbert.chenais@gmail.com
+    pseudo:        nchenais
     password:      secret
-    
-User(cpetitjean):
-    email:         christophe.petitjean@gmail.com
-    pseudo:        cpetitjean
-    password:      secret
-    
 User(cteule):
     email:         clement.teule@gmail.com
     pseudo:        cteule
     password:      secret
-    
-User(ecanale):
-    email:         elisa.canale@gmail.com
-    pseudo:        ecanale
-    password:      secret
-    
-User(ysanchez):
-    email:         yan.sanchez@gmail.com
-    pseudo:        ysanchez
-    password:      secret
-    
-User(dbernard):
-    email:         dominique.bernard@gmail.com
-    pseudo:        dbernard
-    password:      secret
 
-OwnedBook(tueur1CPN):
+OwnedBook(tueur1CTA):
     baseBook:       tueur1
-    owner:          cpetitjean
-    borrower:       ctardella
-OwnedBook(tueur2CPN):
-    baseBook:       tueur2
-    owner:          cpetitjean
-    borrower:       ctardella
-OwnedBook(tueur3CPN):
-    baseBook:       tueur3
-    owner:          cpetitjean
-    borrower:       ctardella
-OwnedBook(tueur4CPN):
-    baseBook:       tueur4
     owner:          ctardella
-    borrower:       ecanale
-OwnedBook(yiuPM1ECE):
+OwnedBook(tueur2CTA):
+    baseBook:       tueur2
+    owner:          ctardella
+OwnedBook(yiuPM1CTA):
     baseBook:       yiuPM1
-    owner:          ecanale
-    borrower:       ctardella
-OwnedBook(yiuPM2ECE):
+    owner:          ctardella
+OwnedBook(yiuPM2CTA):
     baseBook:       yiuPM2
-    owner:          ecanale
-    borrower:       ctardella
-OwnedBook(yiuPM5CTardella):
+    owner:          ctardella
+OwnedBook(yiuPM5CTA):
     baseBook:       yiuPM5
     owner:          ctardella
-    borrower:       ecanale
-OwnedBook(dany1CTardella):
-    baseBook:       dany1
-    owner:          ctardella
-    borrower:       ecanale
-OwnedBook(cuervos1CTardella):
+OwnedBook(cuervos1CTA):
     baseBook:       cuervos1
     owner:          ctardella
-    borrower:       ecanale
-OwnedBook(cuervos2CTardella):
+OwnedBook(cuervos2CTA):
     baseBook:       cuervos2
     owner:          ctardella
-    borrower:       ecanale
-OwnedBook(leFeul1ECE):
-    baseBook:       leFeul1
-    owner:          ecanale
-OwnedBook(leFeul2ECE):
-    baseBook:       leFeul2
-    owner:          ecanale
-OwnedBook(leFeul3ECE):
-    baseBook:       leFeul3
-    owner:          ecanale
-    borrower:       ctardella
-OwnedBook(sinCity1CTardella):
+OwnedBook(sinCity1CTA):
     baseBook:       sinCity1
     owner:          ctardella
-    borrower:       cpetitjean
-OwnedBook(sinCity2CTardella):
+    borrower:       cteule
+OwnedBook(sinCity2CTA):
     baseBook:       sinCity2
     owner:          ctardella
-    borrower:       cpetitjean
-OwnedBook(sinCity4CTardella):
+    borrower:       cteule
+OwnedBook(sinCity4CTA):
     baseBook:       sinCity4
     owner:          ctardella
-    borrower:       ecanale
-OwnedBook(etoileDuDesertCTardella):
-    baseBook:       etoileDuDesert
-    owner:          ctardella
-OwnedBook(adiosPalomitaCTardella):
-    baseBook:       adiosPalomita
-    owner:          ctardella
-OwnedBook(angelaCTardella):
-    baseBook:       angela
-    owner:          ctardella
-OwnedBook(matteo1CTardella):
+    
+OwnedBook(matteo1CTA):
     baseBook:       matteo1
     owner:          ctardella
-    borrower:       ysanchez
-OwnedBook(matteo2CTardella):
+    borrower:       nchenais
+OwnedBook(matteo2CTA):
     baseBook:       matteo2
     owner:          ctardella
-    borrower:       ysanchez
-OwnedBook(angelaCTardella):
-    baseBook:       angela
-    owner:          ctardella
-    borrower:       cpetitjean
-OwnedBook(_500fusilsCTardella):
-    baseBook:       _500fusils
-    owner:          ctardella
-OwnedBook(murena1CTardella):
-    baseBook:       murena1
-    owner:          ctardella
-OwnedBook(murena2CTardella):
-    baseBook:       murena2
-    owner:          ctardella
-OwnedBook(naja1CTardella):
+    borrower:       nchenais
+
+OwnedBook(naja1NCS):
     baseBook:       naja1
-    owner:          ctardella
-    borrower:       cteule
-OwnedBook(naja2CTardella):
+    owner:          nchenais
+OwnedBook(naja2NCS):
     baseBook:       naja2
-    owner:          ctardella
-    borrower:       cteule
-OwnedBook(naja3CTardella):
+    owner:          nchenais
+OwnedBook(naja3NCS):
     baseBook:       naja3
-    owner:          ctardella
-    borrower:       cteule
-OwnedBook(naja4CTardella):
+    owner:          nchenais
+OwnedBook(naja4NCS):
     baseBook:       naja4
-    owner:          ctardella
-    borrower:       cteule
-OwnedBook(naja5CTardella):
+    owner:          nchenais
+OwnedBook(naja5NCS):
     baseBook:       naja5
-    owner:          ctardella
-    borrower:       cteule
-OwnedBook(cemc1CPN):
+    owner:          nchenais
+OwnedBook(cemc1NCS):
     baseBook:       ceciEstMonCorps1
-    owner:          cpetitjean
-OwnedBook(cemc2CPN):
+    owner:          nchenais
+    borrower:       cteule
+OwnedBook(cemc2NCS):
     baseBook:       ceciEstMonCorps2
-    owner:          cpetitjean
-
-
+    owner:          nchenais
+    borrower:       cteule
+OwnedBook(leFeul1NCS):
+    baseBook:       leFeul1
+    owner:          nchenais
+    borrower:       ctardella
+OwnedBook(leFeul2NCS):
+    baseBook:       leFeul2
+    owner:          nchenais
+    borrower:       ctardella
+OwnedBook(leFeul3NCS):
+    baseBook:       leFeul3
+    owner:          nchenais
+    borrower:       ctardella

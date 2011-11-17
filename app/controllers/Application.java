@@ -1,5 +1,9 @@
 package controllers;
 
+import java.util.List;
+
+import models.Serie;
+
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
@@ -18,6 +22,12 @@ public class Application extends LoggedApplication {
 		Mail.send(email);
 		
 		renderText("Mail envoyé");
+	}
+	
+	public static void test() {
+		List<Serie> series =  Serie.find("select serie from Serie serie join serie.books book where book.number = :tome")
+		.bind("tome", new Integer(1)).fetch();
+		renderText(series.toString());
 	}
 
 }

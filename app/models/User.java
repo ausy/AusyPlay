@@ -8,11 +8,10 @@ import javax.persistence.OneToMany;
 
 import play.data.validation.Email;
 import play.data.validation.Required;
-import play.db.jpa.Model;
 import check.Unique;
 
 @Entity
-public class User extends Model {
+public class User extends BaseModel {
 
 	public static final String KEY = "_user";
 

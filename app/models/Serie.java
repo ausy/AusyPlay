@@ -8,10 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
 import play.data.validation.Required;
-import play.db.jpa.Model;
 
 @Entity
-public class Serie extends Model {
+public class Serie extends BaseModel {
 
 	protected static Serie UNBINDED_SERIE;
 

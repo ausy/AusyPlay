@@ -2,6 +2,7 @@ package com.kebuu;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.regex.Pattern;
@@ -178,6 +179,14 @@ public class JPQLHelper {
 	public JPQLHelper addNotInCondition(final String targetProperty, final String paramName, final Object paramValue) {
 		this.addCondition(targetProperty, paramName, paramValue, ConditionType.NOT_IN);
 		return this;
+	}
+	
+	/**
+	 * Call jpaQuery.fetch().
+	 * @return a list of object.
+	 */
+	public List<?> fetch() {
+		return this.jpaQuery.fetch();
 	}
 
 	private String andOrWhere() {

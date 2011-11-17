@@ -8,16 +8,15 @@ import javax.persistence.ManyToOne;
 
 import play.data.validation.Match;
 import play.data.validation.Required;
-import play.db.jpa.Model;
 
 @Entity
-public class Book extends Model {
+public class Book extends BaseModel {
 
 	@Required
 	public String title;
 
 	@Required
-	public Integer number;
+	public Long number;
 
 	@ManyToOne
 	public Serie serie;

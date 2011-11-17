@@ -1,9 +1,9 @@
 <div class="bdIBorrowed">
     <dl><dt><b>Les BD que j'ai empruntées</b></dt>
-		#{if inputLoans}
-		    #{list items:inputLoans, as:'loan'}
+		#{if inputs}
+		    #{list items:inputs, as:'ownedBook'}
                 <dd> 
-			        #${loan.book.baseBook.number} - ${loan.book.baseBook.title} <span class="info">(${loan.book.owner.pseudo})</span>
+			        #${ownedBook.baseBook.number} - ${ownedBook.baseBook.title} <span class="info">(${ownedBook.owner.pseudo})</span>
 				</dd>
 		    #{/list}
 		#{/if}

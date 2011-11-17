@@ -1,9 +1,9 @@
 <div class="bdPeopleBorrowedToMe">
    <dl><dt><b>Les BD que l'on m'a empruntées</b></dt>
-	    #{if outputLoans}
-            #{list items:outputLoans, as:'loan'}
+	    #{if outputs}
+            #{list items:outputs, as:'ownedBook'}
     	        <dd>
-	                #${loan.book.baseBook.number} - ${loan.book.baseBook.title} <span class="info">(${loan.borrower.pseudo})</span> 
+	                #${ownedBook.baseBook.number} - ${ownedBook.baseBook.title} <span class="info">(${ownedBook.borrower.pseudo})</span> 
     	        </dd>
             #{/list}
 	    #{/if}

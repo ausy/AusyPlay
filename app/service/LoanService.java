@@ -2,7 +2,7 @@ package service;
 
 import java.util.List;
 
-import models.Loan;
+import models.OwnedBook;
 import models.User;
 
 /**
@@ -15,14 +15,13 @@ public class LoanService {
 	 * @param connectedUser the connected used
 	 * @return a list of Loan
 	 */
-	public List<Loan> getInput(final User connectedUser) {
-		List<Loan> inputLoans = Loan.find("select loan from Loan loan " +
-				"join loan.book book " +
-				"where book.owner = :user")
+	public List<OwnedBook> getInput(final User connectedUser) {
+		List<OwnedBook> inputs = OwnedBook.find("select ownedBook from OwnedBook ownedBook " +
+				"where ownedBook.borrower = :user")
 			.bind("user", connectedUser)
 			.fetch();
 		
-		return inputLoans;
+		return inputs;
 	}
 
 	/**
@@ -30,12 +29,13 @@ public class LoanService {
 	 * @param connectedUser the connected used
 	 * @return a list of Loan
 	 */
-	public List<Loan> getOuput(final User connectedUser) {
-		List<Loan> outputLoans = Loan.find("select loan from Loan loan " +
-		"where loan.book.owner = :user")
+	public List<OwnedBook> getOuput(final User connectedUser) {
+		List<OwnedBook> outputs = OwnedBook.find("select ownedBook from OwnedBook ownedBook " +
+				"where ownedBook.borrower is not null " +
+				"and ownedBook.owner = :user")
 		.bind("user", connectedUser)
 		.fetch();
 		
-		return outputLoans;
+		return outputs;
 	}
 }
