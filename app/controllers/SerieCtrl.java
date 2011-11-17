@@ -42,6 +42,7 @@ public class SerieCtrl extends LoggedApplication {
 		.bind("userId", getConnectedUser().id).fetch();
 		
 		// Gets books not owned by the connected user in the serie 
+		@SuppressWarnings("unchecked")
 		List<Book> booksInSerie = (List<Book>) new JPQLHelper("select b " +
 				"from Book b " +
 				"join b.serie s ")
