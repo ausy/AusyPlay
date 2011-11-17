@@ -12,13 +12,6 @@ import play.test.FunctionalTest;
 public class BaseFunctionalTest extends FunctionalTest {
 
 	/**
-	 * See getLoggedRequest(final String username, final String password)
-	 */
-	public Request getLoggedRequest() {
-        return this.getLoggedRequest("christophe.tardella@gmail.com", "secret");
-	}
-	
-	/**
 	 * Returns a request containing information of logged user.
 	 * This lets you to test secured url after being logged passing appropriate username and password.
 	 * @param username username used for login

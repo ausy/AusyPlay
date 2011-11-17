@@ -9,8 +9,8 @@ import play.jobs.Job;
 /**
  * Sample of class to illustrate how Jobs work.
  */
-//@Every("10s")
-public class FakeJob extends Job {
+//@Every("10s") uncomment to enable
+public class FakeJob extends Job<Object> {
 
 	@Override
 	public void doJob() throws Exception {
