@@ -3,25 +3,10 @@
 # ~~~~
 
 # Ignore favicon requests
-GET     /favicon.ico                                404
+GET     /favicon.ico                            404
 
 # Home page
-GET     /                                           Collection.display
-
-# Collection pages
-GET     /collections                                Collection.display
-*       /book/prepareAdd                            BookCtrl.prepareAdd
-*       /book/addBook                               BookCtrl.addBook
-*       /userSeries                                 SerieCtrl.userSeries
-*       /booksInSerie/{serieId}                     SerieCtrl.booksInSerie
-*       /deleteBookInSerie                          SerieCtrl.deleteBookInSerie
-*       /addBookInSerie                             SerieCtrl.addBookInSerie
-*       /loan/input                                 LoanCtrl.input
-*       /loan/ouput                                 LoanCtrl.output
-*       /loan                                       LoanCtrl.all
-*       /email                                      Application.email
-
-*       /hey                                        Collection.helloAusy
+GET     /                                       Application.index
 
 # Import CRUD routes
 *      /crud                                    module:crud
