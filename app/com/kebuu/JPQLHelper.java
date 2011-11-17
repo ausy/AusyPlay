@@ -53,7 +53,7 @@ public class JPQLHelper {
 	 */
 	public JPQLHelper addCondition(final String targetProperty, final String paramName, final Object paramValue, final ConditionType type) {
 		// The following condition should mean : paramValue is not null AND if paramValue is a collection, is it not empty
-		if (paramValue != null && (!(paramValue instanceof Collection) || !((Collection)paramValue).isEmpty())) {
+		if (paramValue != null && (!(paramValue instanceof Collection) || !((Collection<?>)paramValue).isEmpty())) {
 			// Update queryBuilder
 			this.queryBuilder.append(" " + this.andOrWhere() + targetProperty + type.getSymbol() +  ":" + paramName + " ");
 			
