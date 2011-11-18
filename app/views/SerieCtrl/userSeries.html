@@ -9,23 +9,5 @@ $(document).ready(function() {
 		 var selectedSerieId = $(this).attr("id");
 	     $(document).trigger(AusyPlay.events.selectedSerie, selectedSerieId);
 	});
-	
-	/*	
-	$.jstree._themes = "@{'/public/stylesheets/jstree/themes'}/";
-	$(".userSerieListContainer").bind("loaded.jstree", function (e, data) {
-        data.inst.open_all(-1); // -1 opens all nodes in the container
-    }).bind("select_node.jstree", function (event, data) { 
-        // `data.rslt.obj` is the jquery extended node that was clicked
-        var selectedSerieId = data.rslt.obj.attr("id");
-        $(document).trigger(AusyPlay.events.selectedSerie, selectedSerieId);
-        
-    }).jstree({ 
-	    "themes" : {
-	        "theme" : "default",
-	        "icons" : false
-	    },
-	    "plugins" : [ "themes", "html_data", "ui" ]
-	});
-	*/
 });
 </script>
