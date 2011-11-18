@@ -34,56 +34,9 @@
 	      </div>
 	    </div>
 	    
-	    <div class="container-fluid">
-			<div class="sidebar">
-                <div id="collection_panel"></div>
-			</div>
-			<div class="content">
-                <div id="myCollectionContent">
-				     #{doLayout /}
-                </div>
-			</div>
+	    <div class="container">
+		  #{doLayout /}
 		</div>
 
-		<script language="javascript" type="text/javascript">
-		
-			var AusyPlay = {
-				    events: {
-				    	selectedSerie:'serie_selected'
-				    } 
-			};
-			 
-			$(document).ready(function() {
-			 	
-			 	// Set up menubar actions
-			    $('.topbar .menu_2_1').click(function() {
-			        $('#myCollectionContent').load('@{LoanCtrl.input}');
-			    });
-			    $('.topbar .menu_2_2').click(function() {
-			        $('#myCollectionContent').load('@{LoanCtrl.output}');
-			    });
-			    $('.topbar .menu_2_3').click(function() {
-			        $('#myCollectionContent').load('@{LoanCtrl.all}');
-			    });
-			 
-				// Set up menu bar design
-			    $('.topbar').dropdown();
-			 
-			 	// Load collection tree (containing series)
-			 	$('#collection_panel').load('@{SerieCtrl.userSeries}');
-			 	
-			 	
-			 	// Manage left panel
-			    var action = #{jsAction @SerieCtrl.booksInSerie(':serieId') /}
-			    
-			    $(document).bind(AusyPlay.events.selectedSerie, function(e, serieId) {
-			        if(serieId) {
-			            $("#myCollectionContent").load(action({serieId: serieId}));
-			        }
-			    });
-
-			});
-		
-		</script>	    
     </body>
 </html>

@@ -13,7 +13,7 @@ public class Security extends Secure.Security {
 	 * @return true if the user is authenticate, false otherwise
 	 */
 	static boolean authenticate(final String username, final String password) {
-		return false;
+		return true;
 	}
 
 	/**
