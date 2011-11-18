@@ -11,6 +11,8 @@ import play.db.jpa.Model;
  */
 public class BaseModel extends Model {
 
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Use apache commons to generated toString by reflection.
 	 */
