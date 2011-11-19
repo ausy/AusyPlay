@@ -5,6 +5,7 @@ import java.util.List;
 import models.Book;
 import models.Serie;
 
+@Check("book-manager")
 public class BookCtrl extends LoggedApplication {
 
 	public static void prepareAdd() {
