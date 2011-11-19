@@ -1,89 +1,12 @@
-<!DOCTYPE html>
+#{extends 'main.html' /}
+#{set title:'Starter Kit' /}
 
-<html>
-    <head>
-        <title>#{get 'title' /}</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/bootstrap.min.css'}">
-        <link rel="shortcut icon" type="image/x-icon" href="@{'/public/images/my-favicon.png'}">
-        <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="utf-8"></script>
-        <script src="@{'/public/javascripts/bootstrap-dropdown.js'}" type="text/javascript" charset="utf-8"></script>
-    </head>
-    
-    <body>
-    
-	    <div class="topbar">
-	      <div class="topbar-inner">
-	        <div class="container">
-	          <h3><a>AusyPlay <img alt="logo" src="@{'/public/images/ausy.jpg'}" height="15"/></a></h3>
-	          <ul class="nav">
-	            <li><a href="@{Collection.display}">Ma collection</a></li>
-	            <li class="dropdown" data-dropdown="dropdown">
-	              <a href="#" class="dropdown-toggle">Emprunts</a>
-	              <ul class="dropdown-menu">
-	                <li><a href="#" class="menu_2_1">Entrants</a></li>
-	                <li><a href="#" class="menu_2_2">Sortants</a></li>
-	                <li class="divider"></li>
-	                <li><a href="#" class="menu_2_3">Tous</a></li>
-	              </ul>
-	            </li>
-	            <li><a href="@{BookCtrl.prepareAdd}">Ajouter BD</a></li>
-	            <li><a href="@{Secure.logout}">Déconnexion</a></li>
-	          </ul>
-	        </div>
-	      </div>
-	    </div>
-	    
-	    <div class="container-fluid">
-			<div class="sidebar">
-                <div id="collection_panel"></div>
-			</div>
-			<div class="content">
-                <div id="myCollectionContent">
-				     #{doLayout /}
-                </div>
-			</div>
-		</div>
-
-		<script language="javascript" type="text/javascript">
-		
-			var AusyPlay = {
-				    events: {
-				    	selectedSerie:'serie_selected'
-				    } 
-			};
-			 
-			$(document).ready(function() {
-			 	
-			 	// Set up menubar actions
-			    $('.topbar .menu_2_1').click(function() {
-			        $('#myCollectionContent').load('@{LoanCtrl.input}');
-			    });
-			    $('.topbar .menu_2_2').click(function() {
-			        $('#myCollectionContent').load('@{LoanCtrl.output}');
-			    });
-			    $('.topbar .menu_2_3').click(function() {
-			        $('#myCollectionContent').load('@{LoanCtrl.all}');
-			    });
-			 
-				// Set up menu bar design
-			    $('.topbar').dropdown();
-			 
-			 	// Load collection tree (containing series)
-			 	$('#collection_panel').load('@{SerieCtrl.userSeries}');
-			 	
-			 	
-			 	// Manage left panel
-			    var action = #{jsAction @SerieCtrl.booksInSerie(':serieId') /}
-			    
-			    $(document).bind(AusyPlay.events.selectedSerie, function(e, serieId) {
-			        if(serieId) {
-			            $("#myCollectionContent").load(action({serieId: serieId}));
-			        }
-			    });
-
-			});
-		
-		</script>	    
-    </body>
-</html>
+<div id="accueil">#{accueil /}</div>
+<div id="play">#{play /}</div>
+<div id="controlleurs">#{controlleurs /}</div>
+<div id="models">#{models /}</div>
+<div id="vues">#{vues /}</div>
+<div id="routes">#{routes /}</div>
+<div id="modules">#{modules /}</div>
+<div id="conf">#{conf /}</div>
+<div id="faq">#{faq /}</div>

@@ -1,2 +1,2 @@
-FakeModel(fm)
-name: nom
+FakeModel(fm):
+    name:   nom
