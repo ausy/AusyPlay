@@ -19,7 +19,7 @@ import play.exceptions.UnexpectedException;
 /**
  * Check which proof if one or a set of properties is unique.
  */
-@SuppressWarnings({"serial", "rawtypes"})
+@SuppressWarnings({ "serial", "rawtypes" })
 public class UniqueCheck extends AbstractAnnotationCheck<Unique> {
 
 	final static String mes = "validation.unique";
@@ -54,14 +54,18 @@ public class UniqueCheck extends AbstractAnnotationCheck<Unique> {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean isSatisfied(final Object validatedObject, final Object value, final OValContext context, final Validator validator) {
+	public boolean isSatisfied(final Object validatedObject,
+			final Object value, final OValContext context,
+			final Validator validator) {
 		this.requireMessageVariablesRecreation();
 		if (value == null) {
 			return true;
 		}
-		final String[] propertyNames = this.getPropertyNames(((FieldContext) context).getField().getName());
+		final String[] propertyNames = this
+				.getPropertyNames(((FieldContext) context).getField().getName());
 		final GenericModel model = (GenericModel) validatedObject;
-		final Model.Factory factory = Model.Manager.factoryFor(model.getClass());
+		final Model.Factory factory = Model.Manager
+				.factoryFor(model.getClass());
 		final String keyProperty = StringUtils.capitalize(factory.keyName());
 		final Object keyValue = factory.keyValue(model);
 		// In case of an update make sure that we won't read the current record
@@ -70,7 +74,8 @@ public class UniqueCheck extends AbstractAnnotationCheck<Unique> {
 		final String entityName = model.getClass().getName();
 		final StringBuffer jpql = new StringBuffer("SELECT COUNT(o) FROM ");
 		jpql.append(entityName).append(" AS o where ");
-		final Object[] values = new Object[isUpdate ? propertyNames.length + 1 : propertyNames.length];
+		final Object[] values = new Object[isUpdate ? propertyNames.length + 1
+				: propertyNames.length];
 		final Class clazz = validatedObject.getClass();
 		for (int i = 0; i < propertyNames.length; i++) {
 			Field field = this.getField(clazz, propertyNames[i]);
@@ -103,9 +108,11 @@ public class UniqueCheck extends AbstractAnnotationCheck<Unique> {
 				}
 			}
 		} catch (Exception e) {
-			throw new UnexpectedException("Error while determining the field " + fieldName + " for an object of type " + clazz);
+			throw new UnexpectedException("Error while determining the field "
+					+ fieldName + " for an object of type " + clazz);
 		}
-		throw new UnexpectedException("Cannot get the field " + fieldName + " for an object of type " + clazz);
+		throw new UnexpectedException("Cannot get the field " + fieldName
+				+ " for an object of type " + clazz);
 	}
 
 }

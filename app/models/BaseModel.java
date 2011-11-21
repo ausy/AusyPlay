@@ -6,8 +6,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import play.db.jpa.Model;
 
 /**
- * Base class for all object model.
- * Implements basic methods such as "toString", "Equals", "hashCode"
+ * Base class for all object model. Implements basic methods such as "toString",
+ * "Equals", "hashCode"
  */
 public class BaseModel extends Model {
 
@@ -20,7 +20,7 @@ public class BaseModel extends Model {
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}
-	
+
 	/**
 	 * Use apache commons to generated equals by reflection.
 	 */
@@ -28,12 +28,12 @@ public class BaseModel extends Model {
 	public boolean equals(final Object other) {
 		return EqualsBuilder.reflectionEquals(this, other);
 	}
-	
-//	/**
-//	 * Use apache commons to generated hashCode by reflection.
-//	 */
-//	@Override
-//	public int hashCode() {
-//		return HashCodeBuilder.reflectionHashCode(this);
-//	}
+
+	// /**
+	// * Use apache commons to generated hashCode by reflection.
+	// */
+	// @Override
+	// public int hashCode() {
+	// return HashCodeBuilder.reflectionHashCode(this);
+	// }
 }

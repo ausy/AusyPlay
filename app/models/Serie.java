@@ -11,7 +11,7 @@ import play.data.validation.Required;
 
 @Entity
 public class Serie extends BaseModel {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	protected static Serie UNBINDED_SERIE;
@@ -30,6 +30,7 @@ public class Serie extends BaseModel {
 	/**
 	 * Returns a serie used to wrap all books for which no serie has been
 	 * declared.
+	 * 
 	 * @return the constant serie
 	 */
 	public synchronized static Serie getUnbindedSerie() {

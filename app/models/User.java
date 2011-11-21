@@ -14,7 +14,7 @@ import check.Unique;
 public class User extends BaseModel {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	public static final String KEY = "_user";
 
 	@Required
@@ -41,7 +41,9 @@ public class User extends BaseModel {
 
 	/**
 	 * Checks if the list of owned books contains the given book.
-	 * @param book the book to check
+	 * 
+	 * @param book
+	 *            the book to check
 	 * @return true or false.
 	 */
 	public boolean hasBook(final Book book) {
