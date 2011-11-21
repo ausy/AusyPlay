@@ -11,6 +11,8 @@ import play.data.validation.Required;
 
 @Entity
 public class Serie extends BaseModel {
+	
+	private static final long serialVersionUID = 1L;
 
 	protected static Serie UNBINDED_SERIE;
 

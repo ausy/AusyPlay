@@ -10,6 +10,8 @@ import check.OwnedBookBorrowerCheck;
 
 @Entity
 public class OwnedBook extends BaseModel {
+	
+	private static final long serialVersionUID = 1L;
 
 	public OwnedBook() {
 		super();

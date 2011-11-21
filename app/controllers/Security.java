@@ -25,4 +25,15 @@ public class Security extends Secure.Security {
 	static void onAuthenticated() {
 		Collection.display();
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	 static boolean check(final String profile) {
+		 if(Security.isConnected() && (Security.connected().contains("tardella") || Security.connected().contains("chenais"))) {
+			 return true;
+		 } else {
+			 return false;
+		 }
+     }
 }

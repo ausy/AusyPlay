@@ -10,7 +10,7 @@ import play.jobs.Job;
  * Sample of class to illustrate how Jobs work.
  */
 //@Every("10s")
-public class FakeJob extends Job {
+public class FakeJob extends Job<Object> {
 
 	@Override
 	public void doJob() throws Exception {
