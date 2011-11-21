@@ -11,12 +11,13 @@ import play.data.validation.Required;
 
 @Entity
 public class Book extends BaseModel {
+
 	private static final long serialVersionUID = 1L;
 
-	@Required(message = "Valeur requise")
+	@Required
 	public String title;
 
-	@Required(message = "Valeur requise")
+	@Required
 	public Long number;
 
 	@ManyToOne
