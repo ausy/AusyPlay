@@ -12,10 +12,10 @@ import play.data.validation.Required;
 @Entity
 public class Book extends BaseModel {
 
-	@Required
+	@Required(message = "Valeur requise")
 	public String title;
 
-	@Required
+	@Required(message = "Valeur requise")
 	public Long number;
 
 	@ManyToOne
@@ -32,7 +32,8 @@ public class Book extends BaseModel {
 	public static List<Serie> getAllBySerie() {
 		List<Serie> allSeries = Serie.findAll();
 
-		List<Book> unSerizedBooks = Book.find("select b from Book b where b.serie is null").fetch();
+		List<Book> unSerizedBooks = Book.find(
+				"select b from Book b where b.serie is null").fetch();
 
 		Serie unbindedSerie = Serie.getUnbindedSerie();
 		for (Book book : unSerizedBooks) {

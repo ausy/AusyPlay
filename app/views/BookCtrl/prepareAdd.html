@@ -1,36 +1,54 @@
 #{extends 'main.html' /}
 #{set title:'Ajouter une BD' /}
 
-<p>ceci est la page de add book</p>
 #{form @BookCtrl.addBook(), method:'GET', id:'createBookForm'}
+
+#{ifErrors}
+  <div class="alert-message error">
+   <a href="#" class="close">×</a>
+   <p><strong>Oops…</strong> Veuillez corriger les erreurs indiquées avant d'essayer à nouveau.</p>
+  </div>
+#{/ifErrors}
+
+#{if flash.message}
+  <div class="alert-message success">
+   <a href="#" class="close">×</a>
+   <p><strong>Félicitations</strong> vous avez créé une BD ! Si vous le souhaitez, vous pouvez en créer d'autres.</p>
+  </div>
+#{/if}
 
 <p>
   <label>Serie </label>
-  #{select 'book.serie', items:listeSeries, valueProperty:'id', labelProperty:'name', id:'book_serie2' }
-  #{option 0}Nouvelle série#{/option}
+  #{select 'book.serie.id', items:listeSeries, valueProperty:'id', labelProperty:'name', id:'book_serie2' }
+  #{option 0}Hors série#{/option}
   #{/select}
 </p>
 
 #{field 'book.number'}
 <p>
-  <label>Number </label>
-  <input type="text" id="${field.id}" name="${field.name}" value="${field.value}">
+  <label>Number : </label>
+  <input type="text" id="${field.id}" name="${field.name}" value="${field.value}" class="${field.errorClass}">
+  <span class="error">${field.error}</span>
 </p>
 #{/}
 
 #{field 'book.isbn'}
 <p>
-  <label>ISBN </label>
-  <input type="text" id="${field.id}" name="${field.name}" value="${field.value}">
+  <label>ISBN : </label>
+  <input type="text" id="${field.id}" name="${field.name}" value="${field.value}" class="${field.errorClass}">
+  <span class="error">${field.error}</span>
 </p>
 #{/}
 
 #{field 'book.title'}
 <p>
-  <label>Titre </label>
-  <input type="text" id="${field.id}" name="${field.name}" value="${field.value}">
+  <label>Titre : </label>
+  <input type="text" id="${field.id}" name="${field.name}" value="${field.value}" class="${field.errorClass}">
+  <span class="error">${field.error}</span>
 </p>
 #{/}
 
-<input type="submit" value="Ajouter">
+<div style="margin-left: 130px">
+	<input class="btn primary" type="submit" value="Ajouter">
+</div>
 #{/form}

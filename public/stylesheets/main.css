@@ -17,3 +17,11 @@
     font-size: 0.8em;
     font-style: italic;
 }
+
+.error {
+	color: #B94A48;
+}
+
+input.hasError {
+	border-color: #EE5F5B;	
+}
