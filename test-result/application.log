@@ -1,193 +1,298 @@
-22 nov. 2011 15:10:58,236 INFO  ~ Starting C:\Users\Kebuu\Documents\Informatique\play\MyProjects\bdmanager2\.
-22 nov. 2011 15:10:58,240 INFO  ~ Module crud is available (C:\Users\Kebuu\Documents\Informatique\play\play-1.2.3\modules\crud)
-22 nov. 2011 15:10:58,241 INFO  ~ Module guice is available (C:\Users\Kebuu\Documents\Informatique\play\play-1.2.3\modules\guice-1.2)
-22 nov. 2011 15:10:58,242 INFO  ~ Module secure is available (C:\Users\Kebuu\Documents\Informatique\play\play-1.2.3\modules\secure)
-22 nov. 2011 15:10:58,961 WARN  ~ You're running Play! in DEV mode
-22 nov. 2011 15:11:03,141 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
-22 nov. 2011 15:11:04,196 INFO  ~ Guice injector created: com.kebuu.Guicy
-22 nov. 2011 15:11:04,207 INFO  ~ Application 'bdmanager2' is now started !
-22 nov. 2011 15:11:04,442 DEBUG ~ select count(*) as col_0_0_ from Book book0_ limit ?
-22 nov. 2011 15:11:04,690 DEBUG ~ insert into Serie (id, name) values (null, ?)
-22 nov. 2011 15:11:04,716 DEBUG ~ insert into Serie (id, name) values (null, ?)
-22 nov. 2011 15:11:04,723 DEBUG ~ insert into Serie (id, name) values (null, ?)
-22 nov. 2011 15:11:04,728 DEBUG ~ insert into Serie (id, name) values (null, ?)
-22 nov. 2011 15:11:04,734 DEBUG ~ insert into Serie (id, name) values (null, ?)
-22 nov. 2011 15:11:04,739 DEBUG ~ insert into Serie (id, name) values (null, ?)
-22 nov. 2011 15:11:04,746 DEBUG ~ insert into Serie (id, name) values (null, ?)
-22 nov. 2011 15:11:04,753 DEBUG ~ insert into Serie (id, name) values (null, ?)
-22 nov. 2011 15:11:04,760 DEBUG ~ insert into Serie (id, name) values (null, ?)
-22 nov. 2011 15:11:04,766 DEBUG ~ insert into Serie (id, name) values (null, ?)
-22 nov. 2011 15:11:04,772 DEBUG ~ insert into Serie (id, name) values (null, ?)
-22 nov. 2011 15:11:04,792 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,799 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,811 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,818 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,829 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,834 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,842 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,849 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,857 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,862 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,871 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,876 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,884 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,889 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,897 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,902 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,911 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,916 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,926 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,931 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,940 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,945 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,953 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,958 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,966 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,971 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,980 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,985 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:04,994 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:04,999 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,008 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,014 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,029 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,036 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,046 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,051 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,060 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,065 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,075 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,082 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,091 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,096 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,103 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,109 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,117 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,123 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,134 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,142 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,154 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,160 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,172 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,180 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,189 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,196 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,209 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,216 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,227 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,234 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,245 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,251 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,261 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,268 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,278 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,284 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,295 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,301 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,311 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,318 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,331 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,337 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,347 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,357 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,366 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,371 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,380 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,385 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,397 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,404 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,416 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,423 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,435 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,441 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,452 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:05,457 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:05,473 DEBUG ~ insert into User (id, email, password, pseudo) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,489 DEBUG ~ insert into User (id, email, password, pseudo) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,504 DEBUG ~ insert into User (id, email, password, pseudo) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,525 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,540 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,546 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,556 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,563 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,570 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,578 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,583 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,587 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,596 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,603 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,608 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,615 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,622 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,626 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,634 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,641 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,646 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,656 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,667 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,673 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,682 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,688 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,694 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,700 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,712 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,719 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,725 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,730 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,741 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,746 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,750 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,761 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,767 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,773 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,778 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,789 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,806 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,811 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,815 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,824 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,830 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,835 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,844 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,850 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,855 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,862 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,866 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,870 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,877 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,881 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,885 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,892 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,897 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,901 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,908 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,913 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,916 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,921 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,928 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,931 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,933 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,938 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,943 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,946 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,949 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,954 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,961 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,964 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,968 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,971 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:05,976 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,980 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
-22 nov. 2011 15:11:05,983 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
-22 nov. 2011 15:11:05,986 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
-22 nov. 2011 15:11:06,227 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
-22 nov. 2011 15:11:06,645 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
-22 nov. 2011 15:11:06,669 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
-22 nov. 2011 15:11:06,835 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.title=? limit ?
-22 nov. 2011 15:11:06,863 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
-22 nov. 2011 15:11:06,870 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.name=? limit ?
-22 nov. 2011 15:11:06,909 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:06,929 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
-22 nov. 2011 15:11:06,936 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
-22 nov. 2011 15:11:06,941 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
-22 nov. 2011 15:11:06,953 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.title=? limit ?
+22 nov. 2011 17:01:32,839 INFO  ~ Starting C:\Users\Kebuu\Documents\Informatique\play\MyProjects\bdmanager2
+22 nov. 2011 17:01:32,847 INFO  ~ Module crud is available (C:\Users\Kebuu\Documents\Informatique\play\play-1.2.3\modules\crud)
+22 nov. 2011 17:01:32,848 INFO  ~ Module guice is available (C:\Users\Kebuu\Documents\Informatique\play\play-1.2.3\modules\guice-1.2)
+22 nov. 2011 17:01:32,850 INFO  ~ Module secure is available (C:\Users\Kebuu\Documents\Informatique\play\play-1.2.3\modules\secure)
+22 nov. 2011 17:01:33,774 WARN  ~ You're running Play! in DEV mode
+22 nov. 2011 17:01:33,929 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+22 nov. 2011 17:01:42,029 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
+22 nov. 2011 17:01:43,209 INFO  ~ Guice injector created: com.kebuu.Guicy
+22 nov. 2011 17:01:43,222 INFO  ~ Application 'bdmanager2' is now started !
+22 nov. 2011 17:01:43,463 DEBUG ~ select count(*) as col_0_0_ from Book book0_ limit ?
+22 nov. 2011 17:01:43,687 DEBUG ~ insert into Serie (id, name) values (null, ?)
+22 nov. 2011 17:01:43,713 DEBUG ~ insert into Serie (id, name) values (null, ?)
+22 nov. 2011 17:01:43,720 DEBUG ~ insert into Serie (id, name) values (null, ?)
+22 nov. 2011 17:01:43,728 DEBUG ~ insert into Serie (id, name) values (null, ?)
+22 nov. 2011 17:01:43,735 DEBUG ~ insert into Serie (id, name) values (null, ?)
+22 nov. 2011 17:01:43,743 DEBUG ~ insert into Serie (id, name) values (null, ?)
+22 nov. 2011 17:01:43,752 DEBUG ~ insert into Serie (id, name) values (null, ?)
+22 nov. 2011 17:01:43,760 DEBUG ~ insert into Serie (id, name) values (null, ?)
+22 nov. 2011 17:01:43,769 DEBUG ~ insert into Serie (id, name) values (null, ?)
+22 nov. 2011 17:01:43,777 DEBUG ~ insert into Serie (id, name) values (null, ?)
+22 nov. 2011 17:01:43,786 DEBUG ~ insert into Serie (id, name) values (null, ?)
+22 nov. 2011 17:01:43,811 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:43,820 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:43,832 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:43,840 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:43,859 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:43,866 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:43,878 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:43,884 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:43,896 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:43,908 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:43,919 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:43,925 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:43,935 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:43,941 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:43,951 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:43,957 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:43,966 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:43,972 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:43,982 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:43,988 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:43,997 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,007 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,019 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,025 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,040 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,049 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,059 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,068 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,085 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,094 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,110 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,121 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,135 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,145 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,161 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,170 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,179 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,187 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,198 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,206 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,217 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,225 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,237 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,243 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,253 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,261 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,273 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,283 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,294 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,302 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,315 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,323 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,335 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,343 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,358 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,365 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,379 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,385 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,397 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,406 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,420 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,428 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,437 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,444 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,457 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,464 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,478 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,484 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,494 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,502 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,516 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,527 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,541 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,549 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,564 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,571 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,585 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,593 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,607 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,614 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,627 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,635 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,647 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ where serie0_.id=? limit ?
+22 nov. 2011 17:01:44,653 DEBUG ~ insert into Book (id, isbn, number, serie_id, title) values (null, ?, ?, ?, ?)
+22 nov. 2011 17:01:44,667 DEBUG ~ insert into User (id, email, password, pseudo) values (null, ?, ?, ?)
+22 nov. 2011 17:01:44,684 DEBUG ~ insert into User (id, email, password, pseudo) values (null, ?, ?, ?)
+22 nov. 2011 17:01:44,697 DEBUG ~ insert into User (id, email, password, pseudo) values (null, ?, ?, ?)
+22 nov. 2011 17:01:44,715 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,725 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:44,731 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:44,745 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,753 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:44,758 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:44,771 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,778 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:44,783 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:44,792 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,802 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:44,808 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:44,818 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,826 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:44,834 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:44,845 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,851 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:44,858 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:44,868 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,875 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:44,880 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:44,889 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,896 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:44,902 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,907 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:44,921 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,929 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:44,934 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,939 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:44,948 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,954 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:44,959 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:44,973 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,979 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:44,987 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:44,992 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:45,004 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,010 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:45,016 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,023 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:45,035 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,041 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:45,046 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:45,058 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,066 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:45,073 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:45,085 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,093 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:45,099 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:45,110 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,118 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:45,123 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:45,134 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,139 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:45,145 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:45,156 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,163 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:45,169 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,179 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:45,188 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,192 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:45,197 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,201 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:45,207 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,211 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:45,215 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,230 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:45,236 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,240 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:45,244 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,248 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:45,254 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,259 DEBUG ~ select book0_.id as id3_, book0_.isbn as isbn3_, book0_.number as number3_, book0_.serie_id as serie5_3_, book0_.title as title3_ from Book book0_ where book0_.id=? limit ?
+22 nov. 2011 17:01:45,265 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.id=? limit ?
+22 nov. 2011 17:01:45,271 DEBUG ~ insert into OwnedBook (id, baseBook_id, borrower_id, owner_id) values (null, ?, ?, ?)
+22 nov. 2011 17:01:59,779 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:01:59,823 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:01:59,840 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:02:00,707 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:02:00,722 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:02:28,138 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:02:57,569 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:04:46,787 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:05:19,554 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:05:42,869 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:06:29,785 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:06:29,842 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:06:29,846 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:06:30,096 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:06:30,099 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:08:43,599 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:08:43,640 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:08:43,642 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:08:43,877 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:08:43,880 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:09:43,776 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:09:43,837 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:09:43,840 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:09:44,121 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:09:44,124 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:10:24,375 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:10:24,437 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:10:24,440 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:10:24,688 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:10:24,692 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:10:48,529 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:10:48,580 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:10:48,582 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:10:48,800 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:10:48,804 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:11:07,409 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:11:07,473 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:11:07,475 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:11:07,712 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:11:07,715 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:11:30,882 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:11:30,972 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:11:30,974 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:11:31,218 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:11:31,221 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:11:56,171 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:11:56,241 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:11:56,243 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:11:56,487 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:11:56,491 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:12:23,429 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:12:23,460 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:12:23,462 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:12:23,694 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:12:23,697 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:13:01,763 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:13:01,819 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:13:01,821 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:13:02,083 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:13:02,086 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:13:18,283 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:13:18,329 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:13:18,331 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:13:18,565 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:13:18,567 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:15:53,329 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:15:53,336 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ order by serie0_.name
+22 nov. 2011 17:15:54,290 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:15:54,292 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:16:27,883 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:16:27,955 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:16:27,957 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:16:28,197 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:16:28,200 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:16:28,425 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:16:28,427 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ order by serie0_.name
+22 nov. 2011 17:16:28,727 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:16:28,731 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:18:26,679 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:18:26,729 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:18:26,731 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ order by serie0_.name
+22 nov. 2011 17:18:27,177 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:18:27,180 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:18:40,954 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:18:41,240 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:18:41,242 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:18:41,544 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:18:41,547 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:18:41,777 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:18:41,780 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ order by serie0_.name
+22 nov. 2011 17:18:42,034 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:18:42,037 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:18:42,209 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:18:42,246 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:18:42,248 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ order by serie0_.name
+22 nov. 2011 17:18:42,483 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:18:42,485 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:19:14,000 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:19:14,002 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:19:14,282 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:19:14,284 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:19:40,153 DEBUG ~ select count(*) as col_0_0_ from User user0_ where user0_.email=? and user0_.password=? limit ?
+22 nov. 2011 17:19:40,207 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:19:40,209 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ order by user0_.email
+22 nov. 2011 17:19:40,446 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:19:40,449 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:19:40,684 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:19:40,686 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ order by serie0_.name
+22 nov. 2011 17:19:40,939 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:19:40,941 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
+22 nov. 2011 17:19:41,104 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:19:41,148 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:19:41,150 DEBUG ~ select serie0_.id as id0_, serie0_.name as name0_ from Serie serie0_ order by serie0_.name
+22 nov. 2011 17:19:41,392 DEBUG ~ select user0_.id as id1_, user0_.email as email1_, user0_.password as password1_, user0_.pseudo as pseudo1_ from User user0_ where user0_.email=? limit ?
+22 nov. 2011 17:19:41,394 DEBUG ~ select distinct serie2_.id as id0_, serie2_.name as name0_ from OwnedBook ownedbook0_ inner join Book book1_ on ownedbook0_.baseBook_id=book1_.id inner join Serie serie2_ on book1_.serie_id=serie2_.id where ownedbook0_.owner_id=? order by serie2_.name
