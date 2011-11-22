@@ -34,6 +34,7 @@ public class BaseFunctionalTest extends FunctionalTest {
 
 		Request request = newRequest(); // helper method from FunctionalTest superclass 
 		request.cookies = loginResponse.cookies; // this makes the request authenticated for secure module 
+		assertHeaderEquals("Location", "/", loginResponse);
 		
 		return request;
 	}

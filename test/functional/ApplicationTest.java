@@ -1,4 +1,11 @@
 package functional;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
+import models.Book;
+import models.Serie;
+
 import org.junit.Test;
 
 import play.mvc.Http.Request;
@@ -10,7 +17,6 @@ public class ApplicationTest extends BaseFunctionalTest {
     public void testSecurityShouldNotPass() {
     	// Try without login
     	Response response = GET("/");
-        assertStatus(302, response);
         assertHeaderEquals("Location", "/login", response);
     }
     
@@ -19,9 +25,33 @@ public class ApplicationTest extends BaseFunctionalTest {
     	Request request = this.getLoggedRequest();
         request.url = "/collection/1"; 
         request.method = "GET"; 
-        //request.params.put("someparam", "somevalue"); 
         Response response = makeRequest(request); 
         assertIsOk(response); 
+    }
+    
+    @Test
+    public void testAddBook() {
+    	// Test book does not exist
+    	String title = "The title of the testedBook";
+		Book testedBook = Book.find("byTitle", title).first();
+		assertNull(testedBook);
+    	
+		// Create the book
+		// Make the login request 
+		Request request = this.getLoggedRequest(); // helper method from FunctionalTest superclass 
+    	
+    	Map<String, String> params = new HashMap<String, String>();
+    	String serieTitle = "Cuervos";
+		params.put("book.serie.id", ((Serie)Serie.find("byName", serieTitle).first()).id.toString()); 
+    	params.put("book.number", "1"); 
+    	params.put("book.title", title); 
+    	
+		POST(request, "/book/addBook", params, new HashMap<String, File>()); 
+    	
+    	// Test the book exists
+    	testedBook = Book.find("byTitle", title).first();
+		assertNotNull(testedBook);
+		assertEquals(serieTitle, testedBook.serie.name);
     }
     
 }
