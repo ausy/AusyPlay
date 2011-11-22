@@ -11,6 +11,8 @@ GET     /                                           Collection.display
 # Collection pages
 GET     /collections                                Collection.display
 *       /book/prepareAdd                            BookCtrl.prepareAdd
+*       /book/prepareCollect                        BookCtrl.prepareCollect
+*       /book/collect                               BookCtrl.collectBd
 *       /book/addBook                               BookCtrl.addBook
 *       /userSeries                                 SerieCtrl.userSeries
 *       /booksInSerie/{serieId}                     SerieCtrl.booksInSerie

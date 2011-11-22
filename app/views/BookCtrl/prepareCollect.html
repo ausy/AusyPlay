@@ -1,0 +1,27 @@
+#{extends 'main.html' /}
+#{set title:'Collecter des BD' /}
+
+<dl>
+	#{list items:availableBooks.sort{it.serie.name}, as:'book'}
+		
+		#{if book_isFirst || !book.serie.name.equals(flash.get('test'))}
+			<dt><b>${book.serie.name}</b></dt>
+		#{/if}
+		
+		${flash.put("test", book.serie.name)}
+			<dd>
+	        #${book.number} - ${book.title} <span id="${book.id}" class="collectBook">Collecter</span> 
+        	</dd>
+	#{/list}
+</dl>	
+
+
+<script language="javascript" type="text/javascript">
+$(document).ready(function() {
+	
+	$(".collectBook").click(function() {
+		 var selectedBookId = $(this).attr("id");
+		 window.location = '@{BookCtrl.collectBd}' + '?book.id=' + selectedBookId;
+	});
+});
+</script>

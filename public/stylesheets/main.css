@@ -3,13 +3,13 @@
     padding: 50px 0 0 0;
 }
 
-#bdmanager .userBooksBySerie .deleteFromSerie, #bdmanager .userBooksBySerie .addInSerie  {
+#bdmanager .userBooksBySerie .deleteFromSerie, #bdmanager .userBooksBySerie .addInSerie, #bdmanager .collectBook {
     color: blue;
     text-decoration: underline;
     font-size: 0.8em;
 }
 
-#bdmanager .userBooksBySerie .deleteFromSerie:hover, #bdmanager .userBooksBySerie .addInSerie:hover, .serie-list-item:hover {
+#bdmanager .userBooksBySerie .deleteFromSerie:hover, #bdmanager .userBooksBySerie .addInSerie:hover, .serie-list-item:hover, #bdmanager .collectBook:hover  {
     cursor: pointer;
 }
 
