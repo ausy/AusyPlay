@@ -4,7 +4,7 @@
 #{form @BookCtrl.addBook(), method:'GET', id:'createBookForm'}
 
 #{ifErrors}
-  <div class="alert-message error">
+  <div class="alert-message error" data-alert="alert">
    <a href="#" class="close">×</a>
    <p><strong>Oops…</strong> Veuillez corriger les erreurs indiquées avant d'essayer à nouveau.</p>
   </div>
@@ -18,7 +18,7 @@
 #{/if}
 
 <p>
-  <label>Serie </label>
+  <label>Serie : </label>
   #{select 'book.serie.id', items:listeSeries, valueProperty:'id', labelProperty:'name', id:'book_serie2' }
   #{option 0}Hors série#{/option}
   #{/select}
@@ -27,7 +27,7 @@
 #{field 'book.number'}
 <p>
   <label>Number : </label>
-  <input type="text" id="${field.id}" name="${field.name}" value="${field.value}" class="${field.errorClass}">
+  <input type="text" id="${field.id}" name="${field.name}" value="${flash[field.name]}" class="${field.errorClass}">
   <span class="error">${field.error}</span>
 </p>
 #{/}
@@ -35,20 +35,28 @@
 #{field 'book.isbn'}
 <p>
   <label>ISBN : </label>
-  <input type="text" id="${field.id}" name="${field.name}" value="${field.value}" class="${field.errorClass}">
-  <span class="error">${field.error}</span>
+  <input type="text" id="${field.id}" name="${field.name}" value="${flash[field.name]}" class="${field.errorClass}">
+  <span class="error">${flash['error_isbn'] ? flash['error_isbn'] : field.error}</span>
 </p>
 #{/}
 
 #{field 'book.title'}
 <p>
   <label>Titre : </label>
-  <input type="text" id="${field.id}" name="${field.name}" value="${field.value}" class="${field.errorClass}">
+  <input type="text" id="${field.id}" name="${field.name}" value="${flash[field.name]}" class="${field.errorClass}">
   <span class="error">${field.error}</span>
 </p>
 #{/}
 
-<div style="margin-left: 130px">
-	<input class="btn primary" type="submit" value="Ajouter">
+<div class="btn-container" style="margin-left: 130px">
+	<input class="btn primary" type="submit" value="Ajouter" />
+	<button class="btn cancel">Annuler</button>
 </div>
 #{/form}
+
+<script language="javascript" type="text/javascript">
+	$('.btn-container .btn.cancel').click(function() {
+		window.location = '@{Collection.display}';
+		return false;
+	});
+</script>

@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 import play.data.validation.Match;
+import play.data.validation.Min;
 import play.data.validation.Required;
 
 @Entity
@@ -18,6 +19,7 @@ public class Book extends BaseModel {
 	public String title;
 
 	@Required
+	@Min(1)
 	public Long number;
 
 	@ManyToOne

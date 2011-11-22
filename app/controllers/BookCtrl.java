@@ -5,6 +5,8 @@ import java.util.List;
 import models.Book;
 import models.Serie;
 import play.data.validation.Valid;
+import play.data.validation.Validation;
+import play.i18n.Messages;
 
 @Check("book-manager")
 public class BookCtrl extends LoggedApplication {
@@ -15,18 +17,24 @@ public class BookCtrl extends LoggedApplication {
 	}
 
 	public static void addBook(final @Valid Book book) {
-		if (validation.hasErrors()) {
+		if (Validation.hasErrors()) {
+			
+			// Specific treatment for isbn, just to provide example
+			if(!Validation.errors("book.isbn").isEmpty()) {
+				flash.put("error_isbn", Messages.get("error.book.isbn.msg"));
+			}
+			
 			params.flash(); // add http parameters to the flash scope
-			validation.keep(); // keep the errors for the next request
+			Validation.keep(); // keep the errors for the next request
 			prepareAdd();
 		}
+		
 		if (book.serie.id <= 0) {
 			book.serie = null;
 		}
 		book.create();
-		flash.put("message",
-				"La BD a été ajoutée, vous pouvez créer à nouveau.");
+		flash.put("message", "La BD a été ajoutée, vous pouvez créer à nouveau.");
+		
 		BookCtrl.prepareAdd();
 	}
-
 }
