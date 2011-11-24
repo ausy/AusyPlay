@@ -1,5 +1,6 @@
 # You can specialize this file for each language.
-# toiuekjbhgkfhjg
+# For example, for French create a messages.fr file
+#
 email=Adresse électonique
 pseudo=Pseudo
 password=Mot de passe
@@ -9,7 +10,6 @@ books=Tomes
 
 validation.required=Ce champ est obligatoire
 validation.invalid=Données nom valides
-validation.min=Ne peut être inférieur à %2$d, si si !
-# n'importe quoi=toto
+validation.min=Ne peut être inférieur à %2$d
 
 error.book.isbn.msg=L'isbn doit être une suite de 10 à 13 entiers
