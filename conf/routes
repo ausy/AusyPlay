@@ -16,7 +16,7 @@ GET     /book/collect                               BookCtrl.collectBd
 POST    /book/addBook                               BookCtrl.addBook
 GET     /userSeries                                 SerieCtrl.userSeries
 GET     /booksInSerie/{serieId}                     SerieCtrl.booksInSerie
-GET     /deleteBookInSerie                          SerieCtrl.deleteBookInSerie
+*       /deleteBookInSerie                          SerieCtrl.deleteBookInSerie
 GET     /addBookInSerie                             SerieCtrl.addBookInSerie
 GET     /loan/input                                 LoanCtrl.input
 GET     /loan/ouput                                 LoanCtrl.output
