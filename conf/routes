@@ -10,29 +10,27 @@ GET     /                                           Collection.display
 
 # Collection pages
 GET     /collections                                Collection.display
-*       /book/prepareAdd                            BookCtrl.prepareAdd
-*       /book/prepareCollect                        BookCtrl.prepareCollect
-*       /book/collect                               BookCtrl.collectBd
-*       /book/addBook                               BookCtrl.addBook
-*       /userSeries                                 SerieCtrl.userSeries
-*       /booksInSerie/{serieId}                     SerieCtrl.booksInSerie
-*       /deleteBookInSerie                          SerieCtrl.deleteBookInSerie
-*       /addBookInSerie                             SerieCtrl.addBookInSerie
-*       /loan/input                                 LoanCtrl.input
-*       /loan/ouput                                 LoanCtrl.output
-*       /loan                                       LoanCtrl.all
-*       /email                                      Application.email
-
-*       /hey                                        Collection.helloAusy
+GET     /book/prepareAdd                            BookCtrl.prepareAdd
+GET     /book/prepareCollect                        BookCtrl.prepareCollect
+GET     /book/collect                               BookCtrl.collectBd
+POST    /book/addBook                               BookCtrl.addBook
+GET     /userSeries                                 SerieCtrl.userSeries
+GET     /booksInSerie/{serieId}                     SerieCtrl.booksInSerie
+GET     /deleteBookInSerie                          SerieCtrl.deleteBookInSerie
+GET     /addBookInSerie                             SerieCtrl.addBookInSerie
+GET     /loan/input                                 LoanCtrl.input
+GET     /loan/ouput                                 LoanCtrl.output
+GET     /loan                                       LoanCtrl.all
+GET     /email                                      Application.email
 
 # Import CRUD routes
-*      /crud                                    module:crud
+*      /crud                                        module:crud
 
 # Import Secure routes
-*       /                                       module:secure
+*       /                                           module:secure
 
 # Map static resources from the /app/public folder to the /public path
-GET     /public/                                staticDir:public
+GET     /public/                                    staticDir:public
 
 # Catch all
-*       /{controller}/{action}                  {controller}.{action}
+*       /{controller}/{action}                      {controller}.{action}
