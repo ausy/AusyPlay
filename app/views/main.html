@@ -5,11 +5,13 @@
         <title>#{get 'title' /}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         #{stylesheet 'bootstrap.min.css' /}
+        #{stylesheet 'prettify.css' /}
         #{stylesheet 'main.css' /}
         <link rel="shortcut icon" type="image/x-icon" href="@{'/public/images/favicon.ico'}">
         #{script 'jquery-1.5.2.min.js' /}
         #{script 'bootstrap-scrollspy.js' /}
         #{script 'bootstrap-twipsy.js' /}
+        #{script 'prettify.js' /}
     </head>
     
     <body>
@@ -21,10 +23,10 @@
 	          <ul class="nav">
 	            <li><a href="#accueil">Accueil</a></li>
 	            <li><a href="#play">Play! Framework</a></li>
+	            <li><a href="#routes">Routes</a></li>
 	            <li><a href="#controlleurs">Controlleurs</a></li>
 	            <li><a href="#models">Models</a></li>
 	            <li><a href="#vues">Vues</a></li>
-	            <li><a href="#routes">Routes</a></li>
 	            <li><a href="#modules">Modules</a></li>
 	            <li><a href="#conf">Conf</a></li>
 	            <li><a href="#faq">FAQ</a></li>
@@ -42,6 +44,7 @@
         $(document).ready(function() {
                $('.topbar').scrollSpy();   
                $("[rel='twipsy']").twipsy();
+               prettyPrint();
         });
         </script>
     </body>

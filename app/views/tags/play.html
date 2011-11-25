@@ -5,16 +5,51 @@ de l'outil sous-jacent : <strong>Play!Framework</strong> et une explication de c
 <h3>Présentation</h3>
 <p>
 <strong>Play!Framework</strong> est un framework de développement d'application web 
-<a rel="twipsy" href="http://en.wikipedia.org/wiki/Stateless_protocol" target="_blank" data-original-title="Sans utilisation de session">StateLess</a> 
-écrit en Java. Contr
+<a rel="twipsy" href="http://en.wikipedia.org/wiki/Stateless_protocol" target="_blank" data-original-title="Sans utilisation de session">StateLess</a>. 
+L'objectif majeure de cet outil est d'offrir une productivité plus élevée aux développeurs de par sa simplicité et sa facilité d'accès.
+</p>
+<p>
+Play! fournit un cadre de développement complet allant de la vue à la persitence des données. De plus il propose de nombreux modules, natifs ou 
+crées par la communauté, permettant d'enrichir votre application selon vos besoins.
+</p>
+<p>
+Play! est basé sur le principe de 
+<a rel="twipsy" href="#" target="_blank" data-original-title="Respecter une convention plutôt que de configurer" data-placement="below">
+Convention over Configuration</a> ce qui limite grandement (voir supprime) les longs fichiers de configuration XML que vous connaissez peut-être.
+</p>
+<p>
+<span class="label important">A Noter</span> : Si Play est un framework MVC basé sur la JVM, il n'est pas pour autant un framework JEE. En effet, 
+il n'implémente pas la norme Servlet puisqu'il ne se base pas sur un serveur d'application mais sur un serveur HTTP simple.
+Qu'est-ce que cela change concrètement ? Et bien pas grand-chose. Votre application pourra générer un WAR classique, que vous pourrez déployer 
+(en mode explosé uniquement) dans la plupart des serveurs d'application.
 </p>
 
-<h3>Points forts</h3>
-<p>...</p>
-
-<h3>Si vous ne devez retenir qu'un mot clé : Productivité</h3>
-<p>Si l'on devait synthétiser à l'extême en ne gardant qu'un seul atout de Play!Framework ce serait celui-là : 
-<strong>Productivité</strong>. En effet, un énorme travail a été fait pour permettre aux développeurs d'être
-le plus efficace possible en réduisant aux maximums les tâches à faibles valeur ajoutée et les tâches 
-répétitives.
-</p>
+<div class="row">
+	<div class="span-one-third">
+		<h3>Points forts</h3>
+		<ol>
+			<li>Possibilité de démarrer un projet en deux lignes de commande</li>
+			<li>Possibilité de générer la base de données à partir de vos objets models</li>
+			<li>Rechargement à chaud des modifications</li>
+			<li>Identification direct de la ligne en erreur en cas d'erreur</li>
+			<li>...</li>
+		</ol>
+	</div>
+	
+	<div class="span-one-third">
+		<h3>Points faibles</h3>
+		<ol>
+			<li>La documentation n'est pas toujours au rendez-vous dès qu'on sort des sentiers battus</li>
+			<li>Il est encore assez peut connu du monde de l'entreprise</li>
+		</ol>
+	</div>
+	
+	<div class="span-one-third">
+		<h3>Productivité</h3>
+		<p>Si l'on devait synthétiser à l'extême en ne gardant qu'un seul atout de Play!Framework ce serait celui-là : 
+		<strong>Productivité</strong>.<br /> En effet, un énorme travail a été fait pour permettre aux développeurs d'être
+		le plus efficace possible en réduisant aux maximums les tâches à faibles valeur ajoutée et les tâches 
+		répétitives. Et c'est à mon sens ce qui le rend si attractif.
+		</p>
+	</div>
+</div>

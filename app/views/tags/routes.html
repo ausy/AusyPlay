@@ -1,0 +1,94 @@
+<h2>Les routes</h2>
+
+<h3>Présentation</h3>
+<p>
+On peut voir les routes comme le lien entre les urls et les controlleurs. Elles vont en effet permettrent d'orienter chaque appel au serveur vers une 
+méthode donnée d'un controlleur donné. Ces routes sont définies dans le fichier <em>conf > routes</em> dont voici un extrait de celui de 
+<strong>AusyPlay</strong> :
+</p>
+
+<pre>
+POST    /book/addBook                               BookCtrl.addBook
+GET     /userSeries                                 SerieCtrl.userSeries
+GET     /booksInSerie/{serieId}                     SerieCtrl.booksInSerie
+*       /deleteBookInSerie                          SerieCtrl.deleteBookInSerie
+# Catch all
+*       /{controller}/{action}                      {controller}.{action}
+</pre>
+
+<h3>Syntaxe</h3>
+<p>Chaque route est représenté par une ligne. Comme vous pouvez le voir, chaque ligne se compose de trois parties : 
+	<dl>
+		<dt>La méthode HTTP</dt>
+		<dd>Les valeurs possibles sont PUT, GET, POST, DELETE, HEAD, WS (pour les requêtes WebSocket) et * 
+		(qui signifie : n'importe qu'elle méthode)</dd>
+		<dt>L'url</dt>
+		<dd>Il s'agit de l'url associée à la route. L'url peut contenir des variables, comme c'est le cas pour <em>/booksInSerie/{serieId}</em>, 
+		dont nous verrons l'utilité plus tard.</dd>
+		<dt>L'action associée à la route</dt>
+		<dd>Il s'agit en fait simplement du nom de la méthode à appeler dans le controlleur spécifié. Par exemple dans <em>BookCtrl.addBook</em>
+		on retrouve le nom de la méthode <em>addBook</em> à appeler dans le controlleur <em>BookCtrl</em></dd>
+	</dl>
+</p>
+
+<h3>Analyse</h3>
+<p>Pour identifier quelle action appelé, Play! cherche donc simplement à faire correspondre les requêtes entrantes avec un couple 
+<strong>Méthode HTTP-Url</strong>. Il est donc possible d'avoir la même url avec des méthodes HTTP différentes (c'est même souvent le cas si vous 
+travaillez vraiment en Rest) : 
+</p>
+<pre>
+	PUT    /book/{id}                               Book.update
+	POST   /book/{id}                               Book.create
+	DELETE /book/{id}                               Book.delete
+	<span class="nocode">#Ces routes n'existent pas dans le projet AusyPlay et ne servent qu'à illuster notre propos.</span>
+</pre>
+
+<p>
+<span class="label notice">Note</span> : Vous pouvez ajouter des commentaires dans le fichier <em>routes</em> en faisant commencer la ligne par 
+<em>#</em>.
+</p>
+<p>
+<span class="label warning">Attention</span> : Play! s'arrête de chercher une route à partir du moment où il en trouve une. Il faut donc penser à mettre
+les urls les plus spécifiques en premier et à garder les routes génériques pour la fin.
+</p>
+<p>Par défaut, PlayFramework propose un route définies comme suit : 
+<pre>
+# Catch all
+*       /{controller}/{action}                      {controller}.{action}
+</pre>
+<p>Cela vous permet de pouvoir appeler n'importe qu'elle action sans avoir à lui spécifier une route particulière. En reprenant l'exemple de mon action
+<em>SerieCtrl.userSeries</em>, je pourrais donc y accéder soit par sont url <em>/userSeries</em> soit par l'url suivante : 
+<em>/SerieCtrl/userSeries</em>
+</p>
+<p>Si vous utilisez des variables dans votre url, la valeur sera directement passé à la méthode du controlleur cible si elle accepte en élément du 
+même nom en paramètre. Par exemple si l'url <em>/booksInSerie/100</em> est appelée, la méthode suivantes sera exécutée avec la valeur 100 pour la 
+variable <em>serieId</em></p> 
+<pre class="prettyprint">
+public static void booksInSerie(final Long serieId) {
+...
+}
+</pre>
+<h4>Cas particuliers</h4>
+<h5>Chargement des modules</h5>
+<p>
+Il est possible d'importer des fichiers de routes d'autres modules comme on peut le voir dans les cas suivants : 
+</p>
+<pre>
+# Import CRUD routes
+*      /crud                                        module:crud
+# Import Secure routes
+*       /                                           module:secure
+</pre>
+<p>Dans le cas, PlayFramework chargera en plus les fichiers routes des modules <em>crud</em> et <em>secure</em> et il préfixera les urls définies 
+dans le module <em>crud</em> par <em>/crud</em> lors de sa recherche de route</p>
+
+<h5>Les répertoires publics</h5>
+<p>
+Il est aussi important de définir les repertoires publics qui vont contenir les fichiers statiques tels que les images, les feuilles css, le fichies 
+javascript... : 
+</p>
+<pre>
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                    staticDir:public
+</pre>
+<p>Dans ce cas, PlayFramework cherchera les ressources dont l'url commencera par <em>/public/</em> dans le répertoire <em>public</em> 
