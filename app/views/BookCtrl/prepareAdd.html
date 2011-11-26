@@ -1,7 +1,7 @@
 #{extends 'main.html' /}
 #{set title:'Ajouter une BD' /}
 
-#{form @BookCtrl.addBook(), method:'GET', id:'createBookForm'}
+#{form @BookCtrl.addBook(), method:'POST', id:'createBookForm'}
 
 #{ifErrors}
   <div class="alert-message error" data-alert="alert">
