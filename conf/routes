@@ -22,6 +22,7 @@ GET     /collections                                Collection.display
 *       /loan/ouput                                 LoanCtrl.output
 *       /loan                                       LoanCtrl.all
 *       /email                                      Application.email
+WS      /websocket                                  WebSocket.asyncMessage
 
 *       /hey                                        Collection.helloAusy
 
