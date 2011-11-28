@@ -11,8 +11,6 @@ public class Bootstrap extends Job<Object> {
 	@Override
 	public void doJob() {
 		Fixtures.deleteDatabase();
-		if (Book.count() == 0) {
-			Fixtures.loadModels("initial-data/all.yml");
-		}
+		Fixtures.loadModels("initial-data/all.yml");
 	}
 }
