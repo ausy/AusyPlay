@@ -1,0 +1,94 @@
+<h2>La page de login</h2>
+<p>La page de login est en fait complètement générée par le module <em>Secure</em> packagé avec la distribution de <b>Play!</b>. Pour activer se module
+il suffit d'indiquer que le projet dépend du module <em>Secure</em> dans le fichier de dépendance <em>dependencies.yml</em> :
+</p>
+<pre>
+# Application dependencies
+require:
+    - play 1.2.3
+    - play -> secure
+</pre>
+<p>Pour indiquer une dépendance vers un module packagé avec <b>Play!</b>, il suffit de respecter la syntaxe ci-dessus. Pour savoir quels sont les
+modules packagé avec <b>Play!</b> regardé dans le répertoire <em>module</em> de votre installation <b>Play!</b>, il s'agit des répertoire que vous 
+y trouverez (ceux sans numéro de version)
+</p>
+<p>
+Un fois cette dépendance précisé, il vous faudra écrire une classe qui étend la classe <em>Secure.Security</em> du module <em>Secure</em> : 
+</p>
+<pre class="prettyprint">
+/**
+ * Configuration of the Secure module.
+ */
+public class Security extends Secure.Security {
+	
+	/**
+	 * This method defines how to authenticate users.
+	 * @param username user name
+	 * @param password user password
+	 * @return true if the user is authenticate, false otherwise
+	 */
+	static boolean authenticate(final String username, final String password) {
+		//Here is a use of play feature : byEmailAndPassword
+		boolean result = User.count("byEmailAndPassword", username, password) != 0;
+		return result;
+	}
+
+	/**
+	 * Url to redirect after autentication.
+	 */
+	static void onAuthenticated() {
+		Collection.display();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	 static boolean check(final String profile) {
+		 if(Security.isConnected() && (Security.connected().contains("tardella") || Security.connected().contains("chenais"))) {
+			 return true;
+		 } else {
+			 return false;
+		 }
+     }
+}
+</pre>
+<p>
+En définissant cette classe et en surchargeant certaines méthodes de la classe mère on peut ainsi : 
+</p>
+<dl>
+	<dt>Indiquer comment se fait l'identification des utilisateurs (méthode <em>authenticate</em>)</dt>
+	<dd>Vous aurez noté que cette méthode est <em>static</em>, comme les suivantes d'ailleurs, ce n'est pas une erreur, c'est ainsi que fonctionne 
+	<b>Play!</b></dd>
+	<dt>Indiquer la page de redirection après identification (méthode <em>onAuthenticated</em>)</dt>
+	<dd>Ici on redirige vers la méthode (toujours <em>static</em>) d'un autre controlleur appelé <em>Collection</em></dd>
+	<dt>Indiquer comment vérifier si l'utilisateur identifié a bien le profile demandé (méthode <em>check</em>)</dt>
+	<dd>Ici on peut voir que le nom du profil passé en paramètre de la méthode ne rentre pas en ligne de compte, seul le username de l'utilisateur 
+	est testé et doit contenir "tardella" ou "chenais"</dd>
+</dl>
+<p>
+Il suffit alors d'importer les routes du module <em>Secure</em> dans votre application en ajoutant la ligne suivante dans le fichier <em>routes</em>
+(l'explication des routes se fait dans la section suivante).
+</p>
+<p>
+Enfin, pour accéder à cette page de login, il faut pointer sur l'url <code>http://localhost:9000/login</code>. Là vous devez renseigner le 
+login/password suivant : christophe.tardella@gmail.com/secret. Si tous c'est bien passé, vous devriez être redirigé vers l'action 
+<em>Collection.display</em> comme on l'a vu plus haut, c'est à dire vers l'url <code>http://localhost:9000/collections</code> 
+(on verra comment se fait le mapping dans la section suivante)
+</p>
+<p>
+<span class="label notice">Note</span> : Dans sa configuration actuelle, l'application utilise une base de données mémoire, comme l'indique la 
+configuration du fichier <b>application.conf</b> (cf. la ligne <em>db=mem</em>). <br/>
+Au démarrage de l'application, des données sont chargés sont chargés dans cette base. Ces données sont stockées dans le fichier <em>all.yml</em> et la
+demande de chargement au démarrage est faite par la classe <code>job.Bootstrap</code> dont le contenu me semble assez explicite :
+</p>
+<pre class="prettyprint">
+@OnApplicationStart
+public class Bootstrap extends Job&lt;Object&gt; {
+
+	@Override
+	public void doJob() {
+		Fixtures.deleteDatabase();
+		Fixtures.loadModels("initial-data/all.yml");
+	}
+}
+</pre>
