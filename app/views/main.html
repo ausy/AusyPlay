@@ -40,6 +40,7 @@
 	    <div class="container-fluid">
 			<div class="sidebar">
                 <div id="collection_panel"></div>
+                <div id="websocket"></div>
 			</div>
 			<div class="content">
                 <div id="myCollectionContent">
@@ -86,7 +87,45 @@
 			            $("#myCollectionContent").load(action({serieId: serieId}));
 			        }
 			    });
-
+			    
+			    if('${play.version}'.indexOf('1.2.4') === 0 ) {
+			    	
+				    // Expose WebSocket (only for play version 1.2.4)
+				    var mySocket;
+				    var mySocketUrl = '@@{WebSocket.asyncMessage}';
+				    if("WebSocket" in window) { // Chrome
+					    console.log("Using WebSocket");
+				    	mySocket = new WebSocket(mySocketUrl);
+				    } else if("MozWebSocket" in window) { // Firefox
+					    console.log("Using MozWebSocket");
+				    	mySocket = new MozWebSocket(mySocketUrl);
+				    } else {
+				    	var messageContainer = $("<div class='alert-message warning block-message' data-alert='alert'></div>");
+				    	messageContainer.html("<a href='#' class='close'>×</a>Votre navigateur ne semble pas prendre en charge les websocket !");
+				     	$('#websocket').append(messageContainer);
+				    }
+	
+				    if(mySocket) {
+					    mySocket.onmessage = function(event) {
+					    	var messageContainer = $("<div class='alert-message block-message info' data-alert='alert'></div>");
+					    	messageContainer.html("<a href='#' class='close'>×</a>" + event.data);
+					    	setTimeout(function() {$('#websocket').prepend(messageContainer);}, 2000);
+					    };
+					    mySocket.onopen = function(event) {
+						    console.log('mySocket.onopen');
+						    console.log('mySocket.readyState (should be 1) : ' + mySocket.readyState);
+					    };
+					    mySocket.onclose = function(event) {
+						    console.log('mySocket.onclose');
+						    console.log('mySocket.readyState : ' + mySocket.readyState);
+					    };
+				    }
+			    } else {
+			    	var messageContainer = $("<div class='alert-message warning block-message' data-alert='alert'></div>");
+			    	messageContainer.html("<a href='#' class='close'>×</a>Vous devez être en version 1.2.4 de Play! pour voir le fonctionnement des " +
+			    			"websocket !");
+			     	$('#websocket').append(messageContainer);
+			    }
 			});
 		
 		</script>	    

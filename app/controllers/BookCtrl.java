@@ -1,5 +1,6 @@
 package controllers;
 
+import java.text.MessageFormat;
 import java.util.List;
 
 import models.Book;
@@ -36,6 +37,10 @@ public class BookCtrl extends LoggedApplication {
 			book.serie = null;
 		}
 		book.create();
+		
+		//Send WebSocket message
+		WebSocket.liveStream.publish(MessageFormat.format("La BD ''{0}'' a été ajoutée dans la série ''{1}''", book.title, book.serie.name));
+		
 		flash.put("message", "La BD a été ajoutée, vous pouvez créer à nouveau.");
 		
 		BookCtrl.prepareAdd();

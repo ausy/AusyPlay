@@ -22,6 +22,7 @@ GET     /loan/input                                 LoanCtrl.input
 GET     /loan/ouput                                 LoanCtrl.output
 GET     /loan                                       LoanCtrl.all
 GET     /email                                      Application.email
+WS      /websocket                                  WebSocket.asyncMessage
 
 # Import CRUD routes
 *      /crud                                        module:crud
