@@ -8,7 +8,7 @@ la droite. Vous avez alors la possibilité de d'ajouter ou de supprimer des él�
 <br /> Les utilisateurs attentifs auront remarqué également un message d'information en bas à gauche parlant de WebSocket. Nous reviendrons sur ce point
 dans le menu <em>Divers > WebSocket</em>.
 </p>
-<img alt="Exemple page ma collection" src="@{/public/images/maCollectionSansWS.png}"/>
+<img alt="Exemple page ma collection" src="@{'/public/images/maCollectionSansWS.png'}"/>
 <p>
 Pour comprendre comment fonctionne cette page, la première chose à voir c'est le mapping <em>url &lt;-&gt; controlleur</em>. Rappelez-vous, au niveau de
 la page de login, on a vu que l'utilisateur était redirigé vers l'action <code>Collection.display</code> et on constate que l'url de la page est :
@@ -52,16 +52,16 @@ méthode <code>render</code>
 </p>
 <p>
 Si vous allez voir ce template, vous vous apercevrez qu'elle ne fait qu'étendre le template <em>views &gt; main.html</em>. Etendre un template signifie
-que l'on va récupérer tout le contenu de son parent en mettant son propre contenu en lieu et place du tag <code>#{doLayout /}</code> de son parent. 
+que l'on va récupérer tout le contenu de son parent en mettant son propre contenu en lieu et place du tag <code>&#35;{doLayout /}</code> de son parent. 
 Comme le template <em>views &gt; Collection &gt; display.html</em> est vide, on aura donc que le contenu du template <em>views &gt; main.html</em> qui
 va charger en ajax le contenu du <em>div</em> d'id "collection_panel" comme l'indique le code js :
 </p>
 <pre class="prettyprint">
 // Load collection tree (containing series)
-$('#collection_panel').load('@{SerieCtrl.userSeries}');
+$('#collection_panel').load('&#64;{SerieCtrl.userSeries}');
 </pre>
 <p>
-L'url de la fonction <code>load</code> est <em>@{SerieCtrl.userSeries}</em>. Il s'agit en fait d'une fonctionnalité qu'offre <b>Play!</b> de 
+L'url de la fonction <code>load</code> est <em>&#64;{SerieCtrl.userSeries}</em>. Il s'agit en fait d'une fonctionnalité qu'offre <b>Play!</b> de 
 pouvoir indiquer l'action à appeler au lieu de l'url, il se charera lui, le transformer cette information en url. En retournant dans notre fichier
 <em>routes</em> on peut trouver la ligne :
 </p>
@@ -72,7 +72,7 @@ GET     /userSeries                                 SerieCtrl.userSeries
 On s'attend donc à ce qu'au chargement de la page, cette dernière lance une requête ajax ayant pour url <em>/userSeries</em>. En utilisant firebug et
 en rafraichissant la page, on constate que c'est bien le cas : 
 </p>
-<img alt="Appel ajax use series" src="@{/public/images/ajaxCallUserSeries.png}"/>
+<img alt="Appel ajax use series" src="@{'/public/images/ajaxCallUserSeries.png'}"/>
 <p>
 Pour savoir ce que ramène cette appel (même si on se doute que c'est elle qui ramène la liste des séries de l'utilisater...), il va donc falloir aller
 voir la méthode .... <em>SerieCtrl.userSeries</em> (c'est presque trop facile, non ?)
@@ -105,7 +105,7 @@ Cette fois encore, on peut déduire le template de sortie de cette méthode : <e
 </p>
 <pre class="prettyprint">
 &lt;div class="userSerieListContainer"&gt;
-    #{serieList userSeries /} 
+    &#35;{serieList userSeries /} 
 &lt;/div&gt;
 
 &lt;script language="javascript" type="text/javascript"&gt;
@@ -119,7 +119,7 @@ $(document).ready(function() {
 &lt;/script&gt;
 </pre>
 <p>
-On voit que ce template se contente de faire appelle à un tag <code>#{serieList /}</code> en lui passant en argument l'objet que lui a fourni le 
+On voit que ce template se contente de faire appelle à un tag <code>&#35;{serieList /}</code> en lui passant en argument l'objet que lui a fourni le 
 controlleur : <em>userSeries</em> (la liste des séries de l'utilisateur connecté'). La définition de ce tag se trouve dans 
 <em>views &gt; tags &gt; serieList.html</em>. 
 <span class="label notice">Note</span> : L'utilisation de tags permet de créer des composants réutilisables. 
@@ -145,7 +145,7 @@ charger en ajax la liste de BD de la série. Ce code passe par la gestion d'un �
 </p>
 <pre class="prettyprint">
 // Manage left panel
-var action = #{jsAction @SerieCtrl.booksInSerie(':serieId') /}
+var action = &#35;{jsAction &#64;SerieCtrl.booksInSerie(':serieId') /}
   
 $(document).bind(AusyPlay.events.selectedSerie, function(e, serieId) {
     if(serieId) {
@@ -155,7 +155,7 @@ $(document).bind(AusyPlay.events.selectedSerie, function(e, serieId) {
 </pre>
 <p>
 Comme vous pouvez le voir, le déclenchement de cette évènement va de nouveau lancer une requête ajax dont l'url est cette fois identifiée par :
-<code>@SerieCtrl.booksInSerie(':serieId')</code>. La définition de ce controlleur est un peut différente de la dernière car elle met en jeu une 
+<code>&#64;SerieCtrl.booksInSerie(':serieId')</code>. La définition de ce controlleur est un peut différente de la dernière car elle met en jeu une 
 variable nommée <em>serieId</em>. En retournant dans le fichier <em>routes</em> on trouve la ligne : 
 </p>
 <pre>
