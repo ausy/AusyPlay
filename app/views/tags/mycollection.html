@@ -1,0 +1,200 @@
+<h2>La page "Ma collection"</h2>
+<p>
+Une fois identifié, vous arrivez sur la page de gestion de votre collection. Si vous vous êtes identifié en tant que christophe.tardella@gmail.com vous
+constatez que les données initiales vous ont attribué un certain nombre de livre. 
+<br/> Vous pouvez voir sur la gauche la liste de séries dans lequelles vous
+avez des BD. et quand vous cliquez sur une série, la liste de BDs de la série que vous possédez et la liste de celles qui vous manquent s'affichent sur
+la droite. Vous avez alors la possibilité de d'ajouter ou de supprimer des éléments.
+<br /> Les utilisateurs attentifs auront remarqué également un message d'information en bas à gauche parlant de WebSocket. Nous reviendrons sur ce point
+dans le menu <em>Divers > WebSocket</em>.
+</p>
+<img alt="Exemple page ma collection" src="@{/public/images/maCollectionSansWS.png}"/>
+<p>
+Pour comprendre comment fonctionne cette page, la première chose à voir c'est le mapping <em>url &lt;-&gt; controlleur</em>. Rappelez-vous, au niveau de
+la page de login, on a vu que l'utilisateur était redirigé vers l'action <code>Collection.display</code> et on constate que l'url de la page est :
+http://localhost:9000.<br />
+Le lien entre l'url et le controlleur se fait dans le fichier <b>conf &gt; routes</b>, et voici la ligne du fichier qui nous intéresse pour le moment :
+</p>
+<pre>
+GET     /                                           Collection.display
+</pre>
+<p>On retrouve à la vois le controlleur <code>Collection.display</code> et l'url <code>/</code> (qui signifie "racine"). En fait lorsque la classe qui
+gère l'identification a appelé <code>Collection.display</code> <b>Play!</b> vous a en fait redirigé vers l'url racine. De la même manière, si vous
+entrez l'url racine dans la barre d'adresse, <b>Play!</b> exécutera la méthode <em>display</em> du controlleur <em>Collection</em>. Voyons donc ce
+qu'il en est de cette méthode.
+</p>
+
+<pre class="prettyprint">
+public class Collection extends LoggedApplication {
+
+	public static void display() {
+		User user = User.findById(getConnectedUser().id);
+
+		render(user);
+	}
+}
+</pre>
+<p>
+<span class="label notice">Note</span>Le controlleur mère <code>LoggedApplication</code> permet de fournir la méthode <code>getConnectedUser</code> 
+et elle permet de s'assurer que l'utilisateur est bien identifié avant d'accéder à l'action demandée. Si ce n'est pas le cas, l'utilisateur est
+redirigé vers la page de login (cd. l'annotation <code>@With(Secure.class)</code> dans la classe <code>LoggedApplication</code>)
+</p>
+
+<p>Comme vous le constatez, cette méthode est <em>static</em> mais normalement cela ne doit plus vous choquer. Ensuite on fait une requête en base
+en récupérant l'utilisateur connecté à partir de son id, précédemment stocké par la page de login. J'espère que vous appréciez la simplicité avec
+laquelle <b>Play!</b> vous permet d'éxécuter une requête. Pour profiter de cela, nous avons seulement crée une classe <code>model.User</code> que 
+nous avons annotée de <code>@Entity</code>.
+</p>
+<p>
+Une fois la requête éxécuté, le controlleur appelle la méthode <code>render(user)</code> qui va, par simple convention et non pas configuration
+appeler le template <em>views &gt; Collection &gt; display.html</em>. De plus ce template aura accès à l'objet que nous avons passé en paramètre de la
+méthode <code>render</code>
+</p>
+<p>
+Si vous allez voir ce template, vous vous apercevrez qu'elle ne fait qu'étendre le template <em>views &gt; main.html</em>. Etendre un template signifie
+que l'on va récupérer tout le contenu de son parent en mettant son propre contenu en lieu et place du tag <code>#{doLayout /}</code> de son parent. 
+Comme le template <em>views &gt; Collection &gt; display.html</em> est vide, on aura donc que le contenu du template <em>views &gt; main.html</em> qui
+va charger en ajax le contenu du <em>div</em> d'id "collection_panel" comme l'indique le code js :
+</p>
+<pre class="prettyprint">
+// Load collection tree (containing series)
+$('#collection_panel').load('@{SerieCtrl.userSeries}');
+</pre>
+<p>
+L'url de la fonction <code>load</code> est <em>@{SerieCtrl.userSeries}</em>. Il s'agit en fait d'une fonctionnalité qu'offre <b>Play!</b> de 
+pouvoir indiquer l'action à appeler au lieu de l'url, il se charera lui, le transformer cette information en url. En retournant dans notre fichier
+<em>routes</em> on peut trouver la ligne :
+</p>
+<pre>
+GET     /userSeries                                 SerieCtrl.userSeries
+</pre>
+<p>
+On s'attend donc à ce qu'au chargement de la page, cette dernière lance une requête ajax ayant pour url <em>/userSeries</em>. En utilisant firebug et
+en rafraichissant la page, on constate que c'est bien le cas : 
+</p>
+<img alt="Appel ajax use series" src="@{/public/images/ajaxCallUserSeries.png}"/>
+<p>
+Pour savoir ce que ramène cette appel (même si on se doute que c'est elle qui ramène la liste des séries de l'utilisater...), il va donc falloir aller
+voir la méthode .... <em>SerieCtrl.userSeries</em> (c'est presque trop facile, non ?)
+</p>
+<pre>
+/**
+ * Controler for action related to series
+ */
+public class SerieCtrl extends LoggedApplication {
+
+	/**
+	 * Returns the list of series for the connected user.
+	 */
+	public static void userSeries() {
+		List&lt;Serie&gt; userSeries = Serie.find("select distinct s " +
+				"from OwnedBook ob " +
+				"join ob.baseBook bb " +
+				"join bb.serie s " +
+				"where ob.owner.id = (:userId) order by s.name")
+			.bind("userId", getConnectedUser().id).fetch();
+		render(userSeries);
+	}
+}
+</pre>
+<p>
+Ici la requête est un peu plus compliqué que simplement de récupérer un objet par son id du coup on doit écrire la requête JPQL à la main. Pour 
+ceux qui connaissent Hibernate, le JPQL est un dérivé du HQL, pour les autres, c'est du SQL objet dont il faudra apprendre la syntaxe. <br/>
+Vous l'aurez compris, l'objet <code>Serie</code> est aussi un objet du model à l'image de la classe <code>User</code>.<br />
+Cette fois encore, on peut déduire le template de sortie de cette méthode : <em>views &gt; SerieCtrl &gt; userSeries.html</em>
+</p>
+<pre class="prettyprint">
+&lt;div class="userSerieListContainer"&gt;
+    #{serieList userSeries /} 
+&lt;/div&gt;
+
+&lt;script language="javascript" type="text/javascript"&gt;
+$(document).ready(function() {
+	
+	$(".serie-list-item").click(function() {
+		 var selectedSerieId = $(this).attr("id");
+	     $(document).trigger(AusyPlay.events.selectedSerie, selectedSerieId);
+	});
+});
+&lt;/script&gt;
+</pre>
+<p>
+On voit que ce template se contente de faire appelle à un tag <code>#{serieList /}</code> en lui passant en argument l'objet que lui a fourni le 
+controlleur : <em>userSeries</em> (la liste des séries de l'utilisateur connecté'). La définition de ce tag se trouve dans 
+<em>views &gt; tags &gt; serieList.html</em>. 
+<span class="label notice">Note</span> : L'utilisation de tags permet de créer des composants réutilisables. 
+</p>
+<p>
+Ce tag à son tour ne fait pas grand chose si ce n'est utiliser un autre tag <b>Play!</b> pour afficher la liste des séries : 
+</p>
+<pre class="prettyprint">
+&lt;ul class="unstyled"&gt;
+    &lt;li&gt;Mes Series
+	    &lt;ul&gt;
+		    #{list items:_arg, as:'serie'}
+		        &lt;li id="${serie.id}" class="serie-list-item"&gt;&lt;a&gt;${serie.name}&lt;/a&gt;&lt;/li&gt; 
+		    #{/list}
+	    &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>
+Pour finir, vous pouvez voir que dans le template <em>views &gt; SerieCtrl &gt; userSeries.html</em>, il y a un bout de code js qui va permettre de
+charger en ajax la liste de BD de la série. Ce code passe par la gestion d'un évènement récupéré au niveau du template parent 
+<em>views &gt; main.html</em>
+</p>
+<pre class="prettyprint">
+// Manage left panel
+var action = #{jsAction @SerieCtrl.booksInSerie(':serieId') /}
+  
+$(document).bind(AusyPlay.events.selectedSerie, function(e, serieId) {
+    if(serieId) {
+        $("#myCollectionContent").load(action({serieId: serieId}));
+    }
+});
+</pre>
+<p>
+Comme vous pouvez le voir, le déclenchement de cette évènement va de nouveau lancer une requête ajax dont l'url est cette fois identifiée par :
+<code>@SerieCtrl.booksInSerie(':serieId')</code>. La définition de ce controlleur est un peut différente de la dernière car elle met en jeu une 
+variable nommée <em>serieId</em>. En retournant dans le fichier <em>routes</em> on trouve la ligne : 
+</p>
+<pre>
+GET     /booksInSerie/{serieId}                     SerieCtrl.booksInSerie
+</pre>
+<p>On s'aperçoit alors que l'url est paramètré par la variable <em>{serieId}</em>. <b>Play!</b> va donc récupérer la valeur de cette variable et la 
+passer à l'action <em>SerieCtrl.booksInSerie</em>, qui elle aussi déclare un argument <em>serieId</em>.
+</p>
+<pre class="prettyprint">
+	/**
+	 * Returns a list with all books of a given the connected owns and 
+	 * a list with all books of a given the connected doesn't own
+	 * @param serieId the id of the serie concerned
+	 */
+	 @SuppressWarnings("unchecked")
+	public static void booksInSerie(final Long serieId) {
+		// Get the serie
+		Serie serie = Serie.findById(serieId);
+		
+		// Gets books owned by the connected user in the serie 
+		List&lt;Book&gt; booksInSerieForUser = Serie.find("select bb from OwnedBook ob join ob.baseBook bb join bb.serie s " +
+		"where s = (:serie) and ob.owner.id = (:userId) order by bb.number")
+		.bind("serie", serie)
+		.bind("userId", getConnectedUser().id).fetch();
+		
+		// Gets books not owned by the connected user in the serie 
+		List&lt;Book&gt; booksInSerie = (List&lt;Book&gt;) new JPQLHelper("select b " +
+				"from Book b " +
+				"join b.serie s ")
+		.addCondition("s", "serie", serie)
+		.addNotInCondition("b", "booksInSerieForUser", booksInSerieForUser)
+		.addOrderByCondition("b.number").fetch();
+		
+		render(booksInSerie, booksInSerieForUser, serie);
+	}
+</pre>
+<p>
+Ici, on a utilisé un classe d'aide que nous avons écrite pour faciliter l'écriture de requête JPQL. L'avantage de cette classe c'est qu'elle gère
+les cas où les paramètres sont nulle ou les listes vides. 
+<br /> Sinon rien de nouveau au niveau du rendu du template, je vous laisse deviner le template qui est appelé et les variables auxquelles il aura
+accès.
+</p>
