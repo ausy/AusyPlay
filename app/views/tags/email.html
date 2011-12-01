@@ -1,0 +1,53 @@
+<h2>Envoyer des mails</h2>
+<p>
+Il est vrai que notre application n'a pas vraiment besoin d'envoyer d'email pour le moment, cependant il peut être intéressant de savoir comment il 
+est possible de le faire avec <b>Play!</b>. C'est pourquoi nous avons crée une action de test permettant d'envoyer un mail. Il s'agit de l'action
+<em>Application.email</em>
+</p>
+<pre class="prettyprint">
+/**
+ * Example of email sending
+ */
+public static void email() throws EmailException {
+	Email email = new SimpleEmail();
+	email.setFrom("collectionmanager.app@gmail.com");
+	email.setSubject("TestMail");
+	email.setMsg("This is a test mail ... :-)");
+	email.addTo("christophe.tardella@gmail.com");
+	Mail.send(email);
+	
+	renderText("Mail envoyé");
+}
+</pre>
+
+<p>
+Le code d'envoi est relativement simple et ne nécessite pas plus d'explication je pense. Cependant il est nécessaire de savoir que la connexion au 
+serveur SMTP est définie ailleurs (sinon, forcément ça marche pas) : dans le fichier <em>application.conf</em>.
+</p>
+
+<pre>
+mail.smtp.host=smtp.gmail.com
+mail.smtp.port=465
+mail.smtp.user=collectionmanager.app
+mail.smtp.pass=collectionmanager.app$
+mail.smtp.channel=ssl
+</pre>
+
+<p>
+Pour pouvoir tester cette fonctionnalité d'envoi de mail, je vous propose de modifier l'adresse de destination (sinon, je vais me faire spammer) et
+de rentrer l'url suivante : <em>/email</em>. Vous devriez rapidement recevoir un mail...
+</p>
+
+<p>
+<span class="label notice">Note</span> : Le mapping entre l'url <em>/email</em> et notre action n'est évidemment pas magique. Si vous regardez bien
+le fichier de routes, vous trouverez la ligne suivante :
+</p>
+<pre>
+GET     /email                                      Application.email
+</pre>
+
+<p>
+<span class="label notice">Note</span> : Vous aurez remarqué que l'action <em>Application.email</em> utilise la méthode <code>renderText</code> au lieu
+de la méthode <code>render</code> dont on a l'habitude. Cette méthode ne va pas faire appelle à un template mais juste retourner le texte fourni en 
+paramètre de la méthode. Vous devriez donc voir le texte "Mail envoyé" s'afficher dans votre navigateur. 
+</p>

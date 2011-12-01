@@ -1,4 +1,7 @@
 <h2>La page de login</h2>
+
+<img alt="Page de login" src="@{'/public/images/login.png'}"/>
+
 <p>La page de login est en fait complètement générée par le module <em>Secure</em> packagé avec la distribution de <b>Play!</b>. Pour activer se module
 il suffit d'indiquer que le projet dépend du module <em>Secure</em> dans le fichier de dépendance <em>dependencies.yml</em> :
 </p>
@@ -92,3 +95,7 @@ public class Bootstrap extends Job&lt;Object&gt; {
 	}
 }
 </pre>
+<p>
+<span class="label notice">Note</span> : Pour vous déconnecter, il vous suffit de taper l'url <code>/logout</code>. Cette url est définie dans le 
+module <code>Secure</code> et importée comme on l'a vu plus haut. Le module <code>Secure</code> se charge donc de tout...
+</p>

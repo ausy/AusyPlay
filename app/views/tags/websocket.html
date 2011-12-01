@@ -1,0 +1,140 @@
+<h2>WebSocket</h2>
+<p>
+Je vous avais parlé plus tôt des <em>WebSocket</em> en vous promettant de revenir sur le sujet plus tard. Je vais donc parler un peu plus
+en détail de ce sujet et surtout de comment on l'a utilisé dans l'application. <br/>
+Avant tout chose, pour pouvoir voir le fonctionnement des <em>WebSocket</em> il vous faut <b>Play!</b> 1.2.4, sinon vous voyez apparaitre en bas à 
+gauche de chaque page de l'application un message d'erreur : 
+</p>
+<img alt="page avec message d'erreur WebSocker" src="@{'/public/images/maCollectionSansWS.png'}" width="100%"/>
+
+<p>
+Une fois la bonne version de <b>Play!</b> installée le message n'apparait plus et on va pouvoir passer à l'explication de la mise en place de notre
+<em>WebSocket</em>. Tout d'abord au niveau de l'objectif, notre <em>WebSocket</em> va avoir pour objectif d'afficher un message avec le titre et le nom 
+de la série de chaque BD crée à chaque fois qu'un utilisateur ajoute un BD à la base. Pour cela il y a plusieurs morceaux à assembler.
+</p>
+
+<h3>Coté serveur</h3>
+<p>
+Coté serveur, <b>Play!</b> propose un controlleur dédié qu'il faut étendre : 
+</p>
+<pre class="prettyprint">
+public class WebSocket extends WebSocketController {
+
+	public static EventStream&lt;String&gt; liveStream = new EventStream&lt;String&gt;();
+
+    public static void asyncMessage() {
+        while (inbound.isOpen()) {
+            String message = await(liveStream.nextEvent());
+            if (message != null) {
+                outbound.send(message);
+            }
+        }
+    }
+}
+</pre>
+
+<p>
+Notre classe est relativement simple. Elle se contente de déclarer une file d'évènements en attribut et une méthode <em>asyncMessage</em>. Cette
+méthode s'assure que la connexion à la page web est toujours ouverte (on verra comment on ouvre cette connexion plus bas) et elle se met 
+en attente d'un nouvel évènement. Lorsqu'un évènement arrive, un message est envoyé à la page web connectée.
+<br /> Voilà pour le controlleur.
+</p>
+
+<p>
+Il faut maintenant écrire le code permettant de rajouter des évènements dans la liste. Pour cela il ne nous faudra pas plus d'une ligne dans la méthode
+<em>BookCtrl.addBook</em> : 
+</p>
+
+<pre  class="prettyprint">
+	public static void addBook(final &#64;Valid Book book) {
+		// .... If validation is OK
+		book.create();
+		
+		//Send WebSocket message
+		WebSocket.liveStream.publish(MessageFormat.format("La BD ''{0}'' a été ajoutée dans la série ''{1}''", book.title, book.serie.name));
+		
+		flash.put("message", "La BD a été ajoutée, vous pouvez créer à nouveau.");
+		
+		BookCtrl.prepareAdd();
+	}
+</pre>
+
+<p>
+C'est chose faite, il ne nous reste plus qu'à créer la routes permettant aux pages web de se connecter à la partie serveur : 
+</p>
+
+<pre>
+WS      /websocket                                  WebSocket.asyncMessage
+</pre>
+
+<p>
+Rien de bien nouveau ici, si ce n'est l'apparition du mot clé <em>WS</em> (pour WebSocket) à la place des traditionnelles méthodes REST.
+</p>
+
+<h3>Coté client</h3>
+
+<p>
+Coté client, il va nous falloir faire un peu de javascript. Comme cette fonctionnalité est présente sur toutes les pages de l'application, le code
+javascript est contenu dans le fichier <em>main.html</em> : 
+</p>
+
+<pre class="prettyprint">
+if('${play.version}'.indexOf('1.2.4') === 0 ) {
+	
+ 	// Expose WebSocket (only for play version 1.2.4)
+	var mySocket;
+ 	var mySocketUrl = '&#64;&#64;{WebSocket.asyncMessage}';
+ 	
+ 	if("WebSocket" in window) { // Chrome
+  		console.log("Using WebSocket");
+ 		mySocket = new WebSocket(mySocketUrl);
+ 	} else if("MozWebSocket" in window) { // Firefox
+  		console.log("Using MozWebSocket");
+ 		mySocket = new MozWebSocket(mySocketUrl);
+ 	} else {
+ 		var messageContainer = $("&lt;div class='alert-message warning block-message' data-alert='alert'&gt;&lt;/div&gt;");
+ 		messageContainer.html("&lt;a href='#' class='close'&gt;×&lt;/a&gt;Votre navigateur ne semble pas prendre en charge les websocket !");
+  		$('#websocket').append(messageContainer);
+ 	}
+
+ 	if(mySocket) {
+  			mySocket.onmessage = function(event) {
+  			var messageContainer = $("&lt;div class='alert-message block-message info' data-alert='alert'&gt;&lt;/div&gt;");
+  			messageContainer.html("&lt;a href='#' class='close'&gt;×&lt;/a&gt;" + event.data);
+  			setTimeout(function() {$('#websocket').prepend(messageContainer);}, 2000);
+  		};
+	  	mySocket.onopen = function(event) {
+	   		console.log('mySocket.onopen');
+	   		console.log('mySocket.readyState (should be 1) : ' + mySocket.readyState);
+	  	};
+			mySocket.onclose = function(event) {
+   			console.log('mySocket.onclose');
+   			console.log('mySocket.readyState : ' + mySocket.readyState);
+  		};
+ 	}
+} else {
+	var messageContainer = $("&lt;div class='alert-message warning block-message' data-alert='alert'&gt;&lt;/div&gt;");
+	messageContainer.html("&lt;a href='#' class='close'&gt;×&lt;/a&gt;Vous devez être en version 1.2.4 de Play! pour voir le fonctionnement des " +
+			"websocket !");
+	$('#websocket').append(messageContainer);
+}
+</pre>
+
+<p>
+Cela peu faire un peu peur au début mais rassurez-vous la partie spécifique aux WebSocket n'est pas si grande que ça (et il y a beaucoup de 
+<code>console.log</code>). Voici en gros ce que fait tout ce code : 
+</p>
+<ol>
+<li>Tout d'abord, il vérifie que la version de <b>Play!</b> commence bien par 1.2.4</li>
+<li>Ensuite on crée une instance de <b>WebSocket</b> et malheureusement pour le moment cela ne marche pas de la même manière sur les différents 
+navigateurs (j'ai même pas tenté IE...)</li>
+<li>Une fois l'instance de <b>WebSocket</b> crée, il suffit de lui définir la méthode <em>onmessage</em>. Ce que l'on fait en lui faisant afficher
+le message envoyé par le serveur</li>
+<li>On peut également ajouter des comportements sur l'onverture ou la fermeture de connections mais ce n'est pas indispensable</li>
+</ol>
+
+<p>
+Et voilà ! Ce n'était vraiment pas sorcier. Faut dire l'exemple n'est pas trop poussé non plus mais on voit bien que c'est relativement accessible.
+<br/> <span class="lable notice">A noter</span> : il est également possible de passer par le <em>WebSocket</em> pour envoyer des informations au
+serveur, il faut alors adapter la méthode <em>asyncMessage</em> en conséquence.
+</p>
