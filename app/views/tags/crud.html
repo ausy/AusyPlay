@@ -3,21 +3,19 @@
 <img alt="Module CRUD" src="@{'/public/images/crud.png'}"/>
 
 <p>
-Le module CRUD est un module packagé avec la distribution de <b>Play!</b> et permettant de générer automatiquement des pages CRUD pour vos objets 
-<em>model</em>.
-
-Pour l'activer il suffit, comme le module <em>Secure</em> de le déclarer dans le fichier de dépendance <b>dependencies.yml</b> : 
+Le module CRUD est un module packagé avec la distribution de <b>Play!</b>. Elle permet de générer automatiquement des pages CRUD pour vos objets 
+<em>model</em>. Pour l'activer il suffit, comme pour le module <em>Secure</em> de le déclarer dans le fichier de dépendance <b>dependencies.yml</b> : 
 </p>
 <pre>
 require:
-    - play 1.2.3
+    - play
     - play -> guice 1.2
     - play -> crud
     - play -> secure
 </pre>
 
 <p>
-Ensuite, pour chaque objet <em>model</em> pour lesquels vous souhaitez avoir la génération de page CRUD vous devez creer un controlleur ayant les
+Ensuite, pour chaque objet <em>model</em> pour lesquels vous souhaitez avoir la génération de pages CRUD vous devez créer un controlleur ayant les
 caractéristiques suivantes : 
 </p>
 <ol>
@@ -25,7 +23,7 @@ caractéristiques suivantes :
 <li>Votre controlleur doit avoir pour nom le même nom que la classe <em>model</em> que vous voulez exposer suivi d'un "s"</li>
 </ol>
 <p>
-Voici un exemple de controlleur CRUD pour la classe <em>Serie</em> : 
+Voici un exemple de controlleur CRUD pour la classe <em>model.Serie</em> : 
 </p>
 
 <pre class="prettyprint">
@@ -37,7 +35,7 @@ public class Series extends CRUD {
 
 <p>
 <span>Note</span> : L'annotation <code>@With(Secure.class)</code> indique simplement que l'utilisateur doit être connecté pour accéder à ce controlleur,
-sinon il sera redirigé vers la page de login. Il s'agit en faite de l'utilisation du module <em>Secure</em>.
+sinon il sera redirigé vers la page de login. Il s'agit en fait de l'utilisation du module <em>Secure</em>.
 </p>
 
 <p>
@@ -50,11 +48,11 @@ Avant de pouvoir tester le module CRUD il ne vous reste plus qu'à importer dans
 </pre>
 
 <p>
-Il ne vous reste plus qu'à pointer sur l'url <em>/crud</em>.
+Du coup, il ne vous reste plus qu'à pointer sur l'url <em>/crud</em>.
 </p>
 <p>
 <span class="label notice">Personnalisation</span> : il est possible de personnaliser les pages du module CRUD. Une première solution est de penser
 à redéfinir la méthode <em>toString()</em> de vos objets <em>model</em>. Vous pouvez également modifier les templates CRUD. Pour savoir comment faire
-rendez-vous sur la documentation de <b>Play!</b> et pour avoir un exemple de personnalisation regarder les pages 
+rendez-vous sur la documentation de <b>Play!</b> et pour avoir un exemple de personnalisation regardez les fichiers 
 <em>app &gt; views &gt; Users &gt; list.html</em> et <em>app &gt; views &gt; Series &gt; show.html</em>
 </p>

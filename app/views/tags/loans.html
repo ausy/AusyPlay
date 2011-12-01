@@ -1,13 +1,14 @@
 <h2>Les pages "Emprunts"</h2>
+
+<img alt="Sous-Menu Tous" src="@{'/public/images/submenuAll.png'}" width="100%" />
+
 <p>
-Les pages du menu "Emprunts" fonctionne globalement comme la page "Ma collection" mais l'utilisation du sous-menu "Tous" va nous permettre de mettre 
+Les pages du menu "Emprunts" fonctionnent globalement comme la page "Ma collection" mais l'utilisation du sous-menu "Tous" va nous permettre de mettre 
 en avant l'utilisation et la mise en place du module <b>Guice</b>.
 </p>
 <p>
-Vous avez certainement déjà constaté que le sous-menu "Tous" n'est rien d'autre que la concaténation des deux sous-menu "Entrants" et "Sortants".
+Vous avez certainement déjà constaté que le sous-menu "Tous" n'est rien d'autre que la concaténation des deux sous-menus "Entrants" et "Sortants".
 </p>
-
-<img alt="Sous-Menu Tous" src="@{'/public/images/submenuAll.png'}" width="100%" />
 
 <p>
 Du coup pour éviter de faire des copier-coller de code nous avons décidé d'exporter les requêtes de récupération des prêts entrants et sortants et de
@@ -85,24 +86,26 @@ public class LoanCtrl extends LoggedApplication {
 </pre>
 
 <p>
-Normalement rien de doit vous choquer dans le service, ni dans le controlleur, il s'agit de requête JPQL classique. La seule chose un peu étrange c'est
-la propriété <em>static</em> <code>loanService</code> annotée <code>Inject</code> dans le controlleur. En fait le controlleur ne fait que déclarer
-le service dont il a besoin afin de se le faire "injecter" (Pour ceux qui ne connaisse pas l'injection de dépendance, il est temps de s'y mettre...).
+Normalement rien de doit vous choquer dans le service, ni dans le controlleur. La seule chose un peu étrange c'est
+la propriété <em>static</em> <code>loanService</code> annotée <code>&#64;Inject</code> dans le controlleur. En fait le controlleur ne fait que déclarer
+le service dont il a besoin afin de se le faire "injecter" 
+(Pour ceux qui ne connaisse pas <a href="http://en.wikipedia.org/wiki/Dependency_injection">l'injection de dépendance</a>, 
+il est temps de s'y mettre...).
 <br />
-L'outil dont on va se servir pour injecter ce service est <em>Guice</em>. Avant pouvoir l'installer il va d'abord falloir l'installer et informer 
+L'outil dont on va se servir pour injecter ce service est <em>Guice</em>. Avant de pouvoir l'utiliser il va d'abord falloir l'installer et informer 
 <b>Play!</b> que votre application en dépend. Commençons par le deuxième point.
 <br />
 Comme on l'a vu pour le module <em>Secure</em>, pour indiquer une dépendance vers un module (mais c'est vrai aussi pour une librairie quelconque) on
-doit le déclarer dans le fichier <em>dépendancies.yml</em>.
+doit le déclarer dans le fichier <em>dependencies.yml</em>.
 </p>
 
 <pre>
 require:
-    - play 1.2.3
-    - play -> guice 1.2
+    - play
+    - play -&gt; guice 1.2
 </pre>
 <blockquote>
-<small>Au moment où c'est ligne sont rédigées la dernière version du module Guice est 1.2</small>
+<small>Au moment où ces lignes sont rédigées la dernière version du module Guice est 1.2</small>
 </blockquote>
 
 <p>Et voilà le premier point réglé ! Pour ce qui est de l'installation c'est encore plus rapide, il suffit de taper la commande
@@ -150,7 +153,7 @@ public class BDManagerModule extends AbstractModule{
 
 </pre>
 
-<p>Cette classe, qui doit étendre <em>AbstractModule</em> déclare les services injectables et précise que l'injection pour la classe <em>LoanCtrl</em>
+<p>Cette classe, qui doit étendre <em>AbstractModule</em> déclare les services injectables et précise que pour la classe <em>LoanCtrl</em>
 l'injection est faite sur des attributs <em>static</em> (ce qui correspond bien à notre cas). Il n'y a plus qu'à vérifier que l'attribut 
 <em>static</em> de type <em>LoanService</em> est bien annotée avec <code>@Inject</code> pour que tout soit bien configuré.
 <br /> Et voilà ! Lorsque notre controlleur sera créé, son attribut <em>LoanService</em> sera automatiquement injecté par Guice.

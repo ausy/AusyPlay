@@ -1,7 +1,7 @@
 <h2>Lancement de Job</h2>
 <p>
 On a déjà vu un exemple de Job lorsqu'on a évoqué l'insertion de données au démarrage de l'application. Cependant <b>Play!</b> propose d'étendre cette
-fonctionnalité de pouvoir créer des tâches planifiées très simplement. Nous avons crée un exemple de tâche planifiée définie dans 
+fonctionnalité et de pouvoir créer des tâches planifiées très simplement. Nous avons crée un exemple de tâche planifiée définie dans 
 <em>FakeJob.java</em> : 
 </p>
 <pre class="prettyprint">
@@ -21,9 +21,9 @@ public class FakeJob extends Job&lg;Object&gt; {
 </pre>
 
 <p>
-Le simple fait d'ajouter l'annotation <code>@Every("10s")</code> et d'etendre la classe <code>Job</code> permet de créer une tâche planifiée, éxécutée
-en l'occurrence toutes les 10 secondes (c'est pourquoi l'annotation est commentée, cela évite de polluer vos log. Décommentez la ligne et relancé le 
-serveur pour vérifier que ça marche)
+Le simple fait d'ajouter l'annotation <code>@Every("10s")</code> et d'étendre la classe <code>Job</code> permet de créer une tâche planifiée, éxécutée
+en l'occurrence toutes les 10 secondes (l'annotation est commentée pour éviter de polluer vos logs. Décommentez la ligne et relancez le 
+serveur pour vérifier que ça marche).
 </p>
 
 <p>
