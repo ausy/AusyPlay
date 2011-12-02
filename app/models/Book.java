@@ -7,17 +7,20 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 import play.data.validation.Match;
+import play.data.validation.Min;
 import play.data.validation.Required;
-import play.db.jpa.Model;
 
 @Entity
-public class Book extends Model {
+public class Book extends BaseModel {
+
+	private static final long serialVersionUID = 1L;
 
 	@Required
 	public String title;
 
 	@Required
-	public Integer number;
+	@Min(1)
+	public Long number;
 
 	@ManyToOne
 	public Serie serie;
@@ -33,7 +36,8 @@ public class Book extends Model {
 	public static List<Serie> getAllBySerie() {
 		List<Serie> allSeries = Serie.findAll();
 
-		List<Book> unSerizedBooks = Book.find("select b from Book b where b.serie is null").fetch();
+		List<Book> unSerizedBooks = Book.find(
+				"select b from Book b where b.serie is null").fetch();
 
 		Serie unbindedSerie = Serie.getUnbindedSerie();
 		for (Book book : unSerizedBooks) {

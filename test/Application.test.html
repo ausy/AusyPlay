@@ -1,7 +1,24 @@
-*{ You can use plain selenium command using the selenium tag }*
-
 #{selenium}
-    // Open the home page, and check that no error occured
+    // Open the home page and check we are redirected to the login page
     open('/')
-    assertNotTitle('Application error')
+    waitForPageToLoad(3000)
+    assertTitle('Login')
+    
+    // Login the application and check we arrive on the right page, with the good number of serie for the user
+    type('username', 'christophe.tardella@gmail.com')
+    type('password', 'secret')
+    click('signin')
+    waitForPageToLoad(3000)
+    assertTitle('Mes Séries')
+    assertXpathCount(//li[@class='serie-list-item'], 5)
+    
+    // Try to add a BD, but an error occurred
+    click(link=Ajouter BD)
+    waitForPageToLoad(3000)
+    assertTitle('Ajouter une BD')
+    
+    click(xpath=//input[@type='submit'])
+    waitForPageToLoad(3000)
+    assertTextPresent('Oops')
+    
 #{/selenium}

@@ -1,0 +1,62 @@
+#{extends 'main.html' /}
+#{set title:'Ajouter une BD' /}
+
+#{form @BookCtrl.addBook(), method:'POST', id:'createBookForm'}
+
+#{ifErrors}
+  <div class="alert-message error" data-alert="alert">
+   <a href="#" class="close">×</a>
+   <p><strong>Oops…</strong> Veuillez corriger les erreurs indiquées avant d'essayer à nouveau.</p>
+  </div>
+#{/ifErrors}
+
+#{if flash.message}
+  <div class="alert-message success">
+   <a href="#" class="close">×</a>
+   <p><strong>Félicitations</strong> vous avez créé une BD ! Si vous le souhaitez, vous pouvez en créer d'autres.</p>
+  </div>
+#{/if}
+
+<p>
+  <label>Serie : </label>
+  #{select 'book.serie.id', items:listeSeries, valueProperty:'id', labelProperty:'name', id:'book_serie2' }
+  #{option ''}Hors série#{/option}
+  #{/select}
+</p>
+
+#{field 'book.number'}
+<p>
+  <label>Tome : </label>
+  <input type="text" id="${field.id}" name="${field.name}" value="${flash[field.name]}" class="${field.errorClass}">
+  <span class="error">${field.error}</span>
+</p>
+#{/}
+
+#{field 'book.isbn'}
+<p>
+  <label>ISBN : </label>
+  <input type="text" id="${field.id}" name="${field.name}" value="${flash[field.name]}" class="${field.errorClass}">
+  <span class="error">${flash['error_isbn'] ? flash['error_isbn'] : field.error}</span>
+</p>
+#{/}
+
+#{field 'book.title'}
+<p>
+  <label>Titre : </label>
+  <input type="text" id="${field.id}" name="${field.name}" value="${flash[field.name]}" class="${field.errorClass}">
+  <span class="error">${field.error}</span>
+</p>
+#{/}
+
+<div class="btn-container" style="margin-left: 130px">
+	<input class="btn primary" type="submit" value="Ajouter" />
+	<button class="btn cancel">Annuler</button>
+</div>
+#{/form}
+
+<script language="javascript" type="text/javascript">
+	$('.btn-container .btn.cancel').click(function() {
+		window.location = '@{Collection.display}';
+		return false;
+	});
+</script>

@@ -6,13 +6,11 @@ import play.jobs.OnApplicationStart;
 import play.test.Fixtures;
 
 @OnApplicationStart
-public class Bootstrap extends Job {
+public class Bootstrap extends Job<Object> {
 
 	@Override
 	public void doJob() {
 		Fixtures.deleteDatabase();
-		if (Book.count() == 0) {
-			Fixtures.loadModels("initial-data/all.yml","initial-data/history.yml");
-		}
+		Fixtures.loadModels("initial-data/all.yml");
 	}
 }

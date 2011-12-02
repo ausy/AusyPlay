@@ -1,20 +1,5 @@
 #{extends 'main.html' /}
 #{set title:'Mes Séries' /}
 
-<div id="myCollectionContent">
 
-</div>
 
-<script language="javascript" type="text/javascript">
-$(document).ready(function() {
-	var action = #{jsAction @SerieCtrl.booksInSerie(':serieId') /}
-	
-	$(document).bind(AusyPlay.events.selectedSerie, function(e, serieId) {
-		if(serieId) {
-		    $("#myCollectionContent").load(action({serieId: serieId}));
-		}
-	});
-	
-});
-
-</script>

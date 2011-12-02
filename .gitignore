@@ -1,2 +1,8 @@
 tmp
-eclipse/classes
+eclipse
+.classpath
+.project
+.settings
+modules
+bin
+test-result

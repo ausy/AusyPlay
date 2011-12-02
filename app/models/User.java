@@ -8,11 +8,12 @@ import javax.persistence.OneToMany;
 
 import play.data.validation.Email;
 import play.data.validation.Required;
-import play.db.jpa.Model;
 import check.Unique;
 
 @Entity
-public class User extends Model {
+public class User extends BaseModel {
+
+	private static final long serialVersionUID = 1L;
 
 	public static final String KEY = "_user";
 
@@ -40,7 +41,9 @@ public class User extends Model {
 
 	/**
 	 * Checks if the list of owned books contains the given book.
-	 * @param book the book to check
+	 * 
+	 * @param book
+	 *            the book to check
 	 * @return true or false.
 	 */
 	public boolean hasBook(final Book book) {

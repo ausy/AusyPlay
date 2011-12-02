@@ -1,14 +1,14 @@
 <div class="bdPeopleBorrowedToMe">
-    <p>Les BD que l'on m'a empruntées</p>
-    #{if outputLoans}
-        <ul>
-            #{list items:outputLoans, as:'loan'}
-                <li>#${loan.book.baseBook.number} - ${loan.book.baseBook.title} <span class="info">(${loan.borrower.pseudo})</span></li> 
+   <dl><dt><b>Les BD que l'on m'a empruntées</b></dt>
+	    #{if outputs}
+            #{list items:outputs, as:'ownedBook'}
+    	        <dd>
+	                #${ownedBook.baseBook.number} - ${ownedBook.baseBook.title} <span class="info">(${ownedBook.borrower.pseudo})</span> 
+    	        </dd>
             #{/list}
-        </ul>
-    #{/if}
-    #{else}
-       Je n'ai pas prété de BD le moment
-    #{/else}
-
+	    #{/if}
+	    #{else}
+	       Je n'ai pas prété de BD le moment
+	    #{/else}
+    </dl>
 </div>

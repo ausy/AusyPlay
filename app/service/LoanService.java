@@ -2,27 +2,40 @@ package service;
 
 import java.util.List;
 
-import models.Loan;
+import models.OwnedBook;
 import models.User;
 
+/**
+ * A service related to Loan, used to centralize business logic.
+ */
 public class LoanService {
 
-	public List<Loan> getInput(final User connectedUser) {
-		List<Loan> inputLoans = Loan.find("select loan from Loan loan " +
-				"join loan.book book " +
-				"where book.owner = :user")
+	/**
+	 * Gets the book the connected user have borrowed.
+	 * @param connectedUser the connected used
+	 * @return a list of Loan
+	 */
+	public List<OwnedBook> getInput(final User connectedUser) {
+		List<OwnedBook> inputs = OwnedBook.find("select ownedBook from OwnedBook ownedBook " +
+				"where ownedBook.borrower = :user")
 			.bind("user", connectedUser)
 			.fetch();
 		
-		return inputLoans;
+		return inputs;
 	}
 
-	public List<Loan> getOuput(final User connectedUser) {
-		List<Loan> outputLoans = Loan.find("select loan from Loan loan " +
-		"where loan.book.owner = :user")
+	/**
+	 * Gets the book the connected user have lent.
+	 * @param connectedUser the connected used
+	 * @return a list of Loan
+	 */
+	public List<OwnedBook> getOuput(final User connectedUser) {
+		List<OwnedBook> outputs = OwnedBook.find("select ownedBook from OwnedBook ownedBook " +
+				"where ownedBook.borrower is not null " +
+				"and ownedBook.owner = :user")
 		.bind("user", connectedUser)
 		.fetch();
 		
-		return outputLoans;
+		return outputs;
 	}
 }

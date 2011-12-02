@@ -1,15 +1,16 @@
 <div class="bdIBorrowed">
-    <p>Les BD que j'ai empruntées</p>
-	#{if inputLoans}
-		<ul>
-		    #{list items:inputLoans, as:'loan'}
-		        <li>#${loan.book.baseBook.number} - ${loan.book.baseBook.title} <span class="info">(${loan.book.owner.pseudo})</span></li> 
+    <dl><dt><b>Les BD que j'ai empruntées</b></dt>
+		#{if inputs}
+		    #{list items:inputs, as:'ownedBook'}
+                <dd> 
+			        #${ownedBook.baseBook.number} - ${ownedBook.baseBook.title} <span class="info">(${ownedBook.owner.pseudo})</span>
+				</dd>
 		    #{/list}
-		</ul>
-	#{/if}
-	#{else}
-	   Je n'ai pas de BD à rendre pour le moment
-	#{/else}
+		#{/if}
+		#{else}
+		   Je n'ai pas de BD à rendre pour le moment
+		#{/else}
+    </dl>
 
 </div>
 

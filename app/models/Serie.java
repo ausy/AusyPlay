@@ -8,10 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
 import play.data.validation.Required;
-import play.db.jpa.Model;
 
 @Entity
-public class Serie extends Model {
+public class Serie extends BaseModel {
+
+	private static final long serialVersionUID = 1L;
 
 	protected static Serie UNBINDED_SERIE;
 
@@ -29,6 +30,7 @@ public class Serie extends Model {
 	/**
 	 * Returns a serie used to wrap all books for which no serie has been
 	 * declared.
+	 * 
 	 * @return the constant serie
 	 */
 	public synchronized static Serie getUnbindedSerie() {

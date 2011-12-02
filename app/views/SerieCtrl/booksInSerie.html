@@ -1,24 +1,25 @@
 <div class="userBooksBySerie">
 	#{if booksInSerieForUser}
-	    Mes BD dans "${serie.name}"
-		<ul>
+	    <dl><dt><b>Mes BD dans "${serie.name}"</b></dt>
 		    #{list items:booksInSerieForUser, as:'book'}
-		        <li>#${book.number} - ${book.title} <span id="${book.id}" class="deleteFromSerie">Supprimer</span></li> 
+				<dd>
+			        #${book.number} - ${book.title} <span id="${book.id}" class="deleteFromSerie">Supprimer</span> 
+                </dd>
 		    #{/list}
-		</ul>
+		</dl>
 	#{/if}
 		
-		<p></p>
+	<p></p>
 	
-		#{if booksInSerie}
-	        BD manquantes dans "${serie.name}"
-	    
-		    <ul>
-		        #{list items:booksInSerie, as:'book'}
-		            <li>#${book.number} - ${book.title} <span id="${book.id}" class="addInSerie">Ajouter</span></li> 
-		        #{/list}
-		    </ul>	
-	    #{/if}
+	#{if booksInSerie}
+        <dl><dt><b>BD manquantes dans "${serie.name}"</b></dt>
+	        #{list items:booksInSerie, as:'book'}
+                <dd>
+                    #${book.number} - ${book.title} <span id="${book.id}" class="addInSerie">Ajouter</span> 
+                </dd>
+	        #{/list}
+	    </dl>
+    #{/if}
 
 	<script language="javascript" type="text/javascript">
 		$(document).ready(function() {
