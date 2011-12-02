@@ -5,7 +5,9 @@ d'aide au développement une documentation sur le projet AusyPlay
 (que vous pouvez récupérer sur github : git://github.com/kebuu/AusyPlay.git).
 
 Pour démarrer ce StarterKit ouvrez une invite de commande au niveau de votre répertoire 
-d'installation du projet et tapez la commande : play run
+d'installation du projet et tapez la commande : 
+> play dependencies --sync (ceci téléchargera les dépendances du projet si nécessaire)
+> play run
 
 Pour accéder à l'application, entrez simplement l'url suivante : http://localhost:9001
 
