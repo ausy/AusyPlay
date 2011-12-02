@@ -1,7 +1,5 @@
 package controllers;
 
-import java.util.List;
-
 import models.User;
 
 public class Collection extends LoggedApplication {
