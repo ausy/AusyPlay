@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-
-<testsuite failures="0" time="1.49" errors="0" skipped="0" tests="2" name="com.kebuu.JPQLHelperTest">
-  <testcase classname="com.kebuu.JPQLHelperTest" name="testAddConditions" time="0.904">
-      </testcase>
-  <testcase classname="com.kebuu.JPQLHelperTest" name="testAddInNotInConditions" time="0.586">
-      </testcase>
-</testsuite>

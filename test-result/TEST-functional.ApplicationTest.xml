@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-
-<testsuite failures="0" time="0.399" errors="0" skipped="0" tests="2" name="functional.ApplicationTest">
-  <testcase classname="functional.ApplicationTest" name="testSecurityShouldNotPass" time="0.053">
-      </testcase>
-  <testcase classname="functional.ApplicationTest" name="testSecurityShouldPass" time="0.346">
-      </testcase>
-</testsuite>

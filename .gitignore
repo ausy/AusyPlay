@@ -5,3 +5,4 @@ eclipse
 .settings
 modules
 bin
+test-result
