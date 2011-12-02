@@ -1,0 +1,16 @@
+Bienvenue sur le StarterKit Ausy pour Play!Framework.
+
+Ce StarterKit contient, en plus de quelques modules pré-installés et quelques classe 
+d'aide au développement une documentation sur le projetAusyPlay 
+(que vous pouvez récupérer sur github : git://github.com/kebuu/AusyPlay.git).
+
+Pour démarrer ce StarterKit ouvrez une invite de commande au niveau de votre répertoire 
+d'installation du projet et tapez la commande : play run
+
+Pour accéder à l'application, entrez simplement l'url suivante : http://localhost:9001
+
+Vous serez alors dirigé vers une page de login. Pour vous "identifier" entrez ce que 
+vous voulez (mais pas rien, il faut un caractère minimum) dans le champ "Username"
+et pressez "Entrée".
+
+Vous accéderez alors à la présentation du StarterKit et à la documentation du projet AusyPlay.
