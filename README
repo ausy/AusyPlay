@@ -1,0 +1,18 @@
+Bienvenue sur le projet AusyPlay.
+
+Ce projet est un mini projet basé sur Play!Framework et dont le but est 
+simplement de travailler un peu avec cet outil.
+
+Ce projet est accompagné d'un projet StarterKit, qui en plus d'être un 
+starterkit pour Play!Framework contient une documentation sur le projet AusyPlay.
+Le projet StarterKit est disponible sur github à l'url suivante : git://github.com/kebuu/AusyPlayStarter.git   
+
+Pour démarrer le projet AusyPlay ouvrez une invite de commande au niveau de votre répertoire 
+d'installation du projet et tapez les commandes : 
+> play dependencies --sync (ceci téléchargera les dépendances du projet si nécessaire)
+> play run
+
+Pour accéder à l'application, entrez simplement l'url suivante : http://localhost:9000
+
+Vous serez alors dirigé vers une page de login. Pour vous "identifier" entrez le 
+login/password suivant : christophe.tardella@gmail.com/secret
