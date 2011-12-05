@@ -19,18 +19,29 @@
 
 <p>
   <label>Serie : </label>
-  #{select 'book.serie.id', items:listeSeries, valueProperty:'id', labelProperty:'name', id:'book_serie2' }
+  #{select 'book.serie.id', items:listeSeries, valueProperty:'id', labelProperty:'name', id:'book_serie_id', value:flash['book.serie.id'] }
   #{option ''}Hors série#{/option}
   #{/select}
 </p>
+<div id='serieFields'>
 
-#{field 'book.number'}
+#{field 'book.serie.name'}
 <p>
-  <label>Tome : </label>
+  <label>Nouvelle série : </label>
   <input type="text" id="${field.id}" name="${field.name}" value="${flash[field.name]}" class="${field.errorClass}">
   <span class="error">${field.error}</span>
 </p>
 #{/}
+
+#{field 'book.number'}
+<p>
+  <label>Tome n°: </label>
+  <input type="text" id="${field.id}" name="${field.name}" value="${flash[field.name]}" class="${field.errorClass}">
+  <span class="error">${field.error}</span>
+</p>
+#{/}
+
+</div>
 
 #{field 'book.isbn'}
 <p>
@@ -55,8 +66,28 @@
 #{/form}
 
 <script language="javascript" type="text/javascript">
+$(document).ready(function() {
 	$('.btn-container .btn.cancel').click(function() {
 		window.location = '@{Collection.display}';
 		return false;
 	});
+	
+	$('#book_serie_id').change(function () {
+		toggleSerie();
+	});
+	
+	$('#book_serie_id').keyup(function () {
+		toggleSerie();
+	});
+	
+	function toggleSerie() {
+		if ($('#book_serie_id option:selected').val().length > 0 ) {
+			$('#serieFields').hide('slow');
+		} else {
+			$('#serieFields').show('slow');
+		}
+	};
+	
+	toggleSerie();
+});
 </script>
