@@ -6,6 +6,10 @@ import java.util.List;
 import models.Book;
 import models.OwnedBook;
 import models.Serie;
+
+import org.apache.commons.lang.ArrayUtils;
+
+import play.Logger;
 import play.data.validation.Valid;
 import play.data.validation.Validation;
 import play.i18n.Messages;
@@ -21,11 +25,27 @@ public class BookCtrl extends LoggedApplication {
 	}
 
 	public static void addBook(final @Valid Book book) {
-		Validation.required("book.serie.name", book.serie.name);
+		// Serie's name is required if it's a new serie that has to be created
+		if (book.serie.id == null) {
+			Validation.required("book.serie.name", book.serie.name);
 
+			if (book.serie.name != null) {
+				Serie serie = Serie.find("byName", book.serie.name).first();
+				if (serie != null) {
+					Validation.addError("book.serie.name",
+							"La série existe déjà",
+							ArrayUtils.EMPTY_STRING_ARRAY);
+				}
+			}
+		}
+
+		// Validation errror treatment
 		if (Validation.hasErrors()) {
-			for (play.data.validation.Error error : Validation.errors()) {
-				System.out.println(error.message() + "  " + error.getKey());
+
+			if (Logger.isDebugEnabled()) {
+				for (play.data.validation.Error error : Validation.errors()) {
+					Logger.debug(error.message() + "  " + error.getKey());
+				}
 			}
 
 			// Specific treatment for isbn, just to provide example
@@ -35,23 +55,25 @@ public class BookCtrl extends LoggedApplication {
 
 			params.flash(); // add http parameters to the flash scope
 			Validation.keep(); // keep the errors for the next request
-			prepareAdd();
+		} else {
+
+			// Create serie is needed
+			if (book.serie.id == null) {
+				book.serie.create();
+			}
+
+			book.create();
+
+			// Send WebSocket message
+			WebSocket.liveStream.publish(MessageFormat.format(
+					"La BD ''{0}'' a été ajoutée dans la série ''{1}''",
+					book.title, book.serie.name));
+
+			flash.put("message",
+					"La BD a été ajoutée, vous pouvez créer à nouveau.");
 		}
 
-		if (book.serie.id <= 0) {
-			book.serie = null;
-		}
-		book.create();
-
-		// Send WebSocket message
-		WebSocket.liveStream.publish(MessageFormat.format(
-				"La BD ''{0}'' a été ajoutée dans la série ''{1}''",
-				book.title, book.serie.name));
-
-		flash.put("message",
-				"La BD a été ajoutée, vous pouvez créer à nouveau.");
-
-		BookCtrl.prepareAdd();
+		BookCtrl.prepareAdd(); // Redirection toward input form
 	}
 
 	@SuppressWarnings("unchecked")
