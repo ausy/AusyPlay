@@ -17,10 +17,16 @@ public class LoggedApplication extends Controller {
 	 * Stores the connected user in the cache for 15mn.
 	 */
 	@Before
-	static void setConnectedUser() {
+	static void setConnectedUser() throws Throwable {
 		if (Security.isConnected()) {
 			User user = User.find("byEmail", Security.connected()).first();
-			Cache.set(session.getId() + User.KEY, user, "15mn");
+			
+			if(user == null) {
+				session.clear();
+				Secure.login();
+			} else {
+				Cache.set(session.getId() + User.KEY, user, "15mn");
+			}
 		}
 	}
 
