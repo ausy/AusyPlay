@@ -2,10 +2,10 @@ package controllers;
 
 import java.util.List;
 
-import models.OwnedBook;
-import service.LoanService;
+import javax.inject.Inject;
 
-import com.google.inject.Inject;
+import models.OwnedBook;
+import service.ILoanService;
 
 /**
  * Controllers for Loan.
@@ -16,7 +16,7 @@ public class LoanCtrl extends LoggedApplication {
 	 * Here is the loanService injected by Guice.
 	 */
 	@Inject
-	public static LoanService loanService;
+	public static ILoanService loanService;
 	
 	public static void input() {
 		List<OwnedBook> inputs = loanService.getInput(getConnectedUser());

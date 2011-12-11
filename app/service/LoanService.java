@@ -8,13 +8,12 @@ import models.User;
 /**
  * A service related to Loan, used to centralize business logic.
  */
-public class LoanService {
+public class LoanService implements ILoanService {
 
-	/**
-	 * Gets the book the connected user have borrowed.
-	 * @param connectedUser the connected used
-	 * @return a list of Loan
+	/** 
+	 * {@inheritDoc}
 	 */
+	@Override
 	public List<OwnedBook> getInput(final User connectedUser) {
 		List<OwnedBook> inputs = OwnedBook.find("select ownedBook from OwnedBook ownedBook " +
 				"where ownedBook.borrower = :user")
@@ -24,11 +23,10 @@ public class LoanService {
 		return inputs;
 	}
 
-	/**
-	 * Gets the book the connected user have lent.
-	 * @param connectedUser the connected used
-	 * @return a list of Loan
+	/** 
+	 * {@inheritDoc}
 	 */
+	@Override
 	public List<OwnedBook> getOuput(final User connectedUser) {
 		List<OwnedBook> outputs = OwnedBook.find("select ownedBook from OwnedBook ownedBook " +
 				"where ownedBook.borrower is not null " +
