@@ -28,7 +28,7 @@
 #{field 'book.serie.name'}
 <p>
   <label>Nouvelle série : </label>
-  <input type="text" id="${field.id}" name="${field.name}" value="${flash[field.name]}" class="${field.errorClass}">
+  <input type="text" id="${field.id}" name="${field.name}" value="${flash[field.name]}" class="${field.errorClass} newSerieName">
   <span class="error">${play.data.validation.Validation.errors('book.serie.name').join(', ')}</span>
 </p>
 #{/}
@@ -83,8 +83,10 @@ $(document).ready(function() {
 	function toggleSerie() {
 		if ($('#book_serie_id option:selected').val().length > 0 ) {
 			$('#serieFields').hide('slow');
+			$('.newSerieName').attr('disabled', 'disabled');
 		} else {
 			$('#serieFields').show('slow');
+			$('.newSerieName').removeAttr('disabled');
 		}
 	};
 	
