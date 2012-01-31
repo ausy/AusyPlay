@@ -1,6 +1,6 @@
 package job;
 
-import models.Book;
+import models.User;
 import play.jobs.Job;
 import play.jobs.OnApplicationStart;
 import play.test.Fixtures;
@@ -10,7 +10,9 @@ public class Bootstrap extends Job<Object> {
 
 	@Override
 	public void doJob() {
-		Fixtures.deleteDatabase();
-		Fixtures.loadModels("initial-data/all.yml");
+		if(User.count() == 0) {
+			//Fixtures.deleteDatabase();
+			Fixtures.loadModels("initial-data/all.yml");
+		}
 	}
 }
