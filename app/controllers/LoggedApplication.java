@@ -22,6 +22,10 @@ public class LoggedApplication extends Controller {
 			User user = User.find("byEmail", Security.connected()).first();
 			
 			if(user == null) {
+				user = User.find("byPseudo", Security.connected()).first();
+			}
+			
+			if(user == null) {
 				session.clear();
 				Secure.login();
 			} else {

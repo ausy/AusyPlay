@@ -16,6 +16,7 @@ public class Security extends Secure.Security {
 	static boolean authenticate(final String username, final String password) {
 		//Here is a use of play feature : byEmailAndPassword
 		boolean result = User.count("byEmailAndPassword", username, password) != 0;
+		result = result || (User.count("byPseudoAndPassword", username, password) != 0);
 		return result;
 	}
 
