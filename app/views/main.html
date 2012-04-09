@@ -88,6 +88,7 @@
 			        }
 			    });
 			    
+			    /*
 			    if('${play.version}'.indexOf('1.2.4') === 0 ) {
 			    	
 				    // Expose WebSocket (only for play version 1.2.4)
@@ -120,12 +121,11 @@
 						    console.log('mySocket.readyState : ' + mySocket.readyState);
 					    };
 				    }
-			    } else {
+			    } else {*/
 			    	var messageContainer = $("<div class='alert-message warning block-message' data-alert='alert'></div>");
-			    	messageContainer.html("<a href='#' class='close'>×</a>Vous devez être en version 1.2.4 de Play! pour voir le fonctionnement des " +
-			    			"websocket !");
+			    	messageContainer.html("<a href='#' class='close'>×</a>Les WebSockets sont désactivés suites aux mise à jour des navigateurs...");
 			     	$('#websocket').append(messageContainer);
-			    }
+			  //  }
 			});
 		
 		</script>	    
